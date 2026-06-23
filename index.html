@@ -137,42 +137,43 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .cc-val{color:rgba(245,243,239,.78);line-height:1.7;}
 
 /* ══ WEATHER WIDGET ══ */
-.weather-strip{background:var(--ink-deep);border-top:1px solid rgba(200,218,234,.08);border-bottom:1px solid rgba(200,218,234,.08);}
+.weather-strip{background:#00358E;border-top:none;border-bottom:none;}
 .weather-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
 .weather-header{display:flex;align-items:center;gap:10px;padding:32px 0 24px;}
-.wc-dot{width:6px;height:6px;border-radius:50%;background:var(--ice);animation:wPulse 2s ease-in-out infinite;}
+.wc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.7);animation:wPulse 2s ease-in-out infinite;}
 @keyframes wPulse{0%,100%{opacity:.3}50%{opacity:1}}
-.weather-title{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(200,218,234,.5);}
+.weather-title{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.6);}
 .weather-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-bottom:32px;}
-.wc-item{padding:0 32px;border-right:1px solid rgba(200,218,234,.08);}
+.wc-item{padding:0 32px;border-right:1px solid rgba(255,255,255,.12);}
 .wc-item:first-child{padding-left:0;}
 .wc-item:last-child{border-right:none;}
-.wc-label{font-size:10px;letter-spacing:2.5px;color:rgba(200,218,234,.35);margin-bottom:12px;text-transform:uppercase;}
-.wc-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);letter-spacing:1px;color:var(--snow);line-height:1;}
-.wc-unit{font-size:clamp(18px,2vw,26px);color:rgba(200,218,234,.5);margin-left:4px;}
-.wc-sub{font-size:11px;color:rgba(245,243,239,.25);margin-top:6px;}
-.wc-note{font-size:10px;color:rgba(200,218,234,.2);padding-bottom:0;letter-spacing:.4px;}
-.wc-loading{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);color:rgba(200,218,234,.15);letter-spacing:1px;line-height:1;}
+.wc-label{font-size:11px;letter-spacing:2.5px;color:rgba(255,255,255,.55);margin-bottom:12px;text-transform:uppercase;}
+.wc-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);letter-spacing:1px;color:#fff;line-height:1;}
+.wc-unit{font-size:clamp(18px,2vw,26px);color:rgba(255,255,255,.6);margin-left:4px;}
+.wc-sub{font-size:12px;color:rgba(255,255,255,.45);margin-top:6px;}
+.wc-note{font-size:10px;color:rgba(255,255,255,.25);padding-bottom:0;letter-spacing:.4px;}
+.wc-loading{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);color:rgba(255,255,255,.15);letter-spacing:1px;line-height:1;}
 
 /* 週預測：橫向滑動 */
-.forecast-section{border-top:1px solid rgba(200,218,234,.07);padding:20px 0 28px;}
-.forecast-label{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:3px;color:rgba(200,218,234,.35);margin-bottom:16px;}
+.forecast-section{border-top:1px solid rgba(255,255,255,.12);padding:20px 0 28px;}
+.forecast-label{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.4);margin-bottom:16px;}
 .forecast-row{display:flex;gap:3px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 .forecast-row::-webkit-scrollbar{display:none;}
-.fc-day{flex:0 0 auto;width:120px;background:rgba(200,218,234,.03);border:1px solid rgba(200,218,234,.07);padding:16px 14px;text-align:center;}
-.fc-date{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:1.5px;color:rgba(200,218,234,.4);margin-bottom:8px;}
-.fc-wx{font-size:11px;color:rgba(245,243,239,.4);margin-bottom:10px;line-height:1.4;min-height:28px;}
-.fc-temp{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--snow);letter-spacing:1px;margin-bottom:4px;}
-.fc-temp .lo{color:rgba(200,218,234,.4);font-size:15px;margin-left:3px;}
-.fc-snow{font-size:11px;color:rgba(200,218,234,.6);}
+.fc-day{flex:0 0 auto;width:120px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 14px;text-align:center;}
+.fc-date{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.45);margin-bottom:8px;}
+.fc-wx{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:10px;line-height:1.4;min-height:32px;}
+.fc-temp{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:1px;margin-bottom:4px;}
+.fc-temp .lo{color:rgba(255,255,255,.45);font-size:16px;margin-left:3px;}
+.fc-snow{font-size:11px;color:rgba(255,255,255,.5);}
 .fc-snow span{font-family:'Bebas Neue',sans-serif;font-size:14px;}
 @media(max-width:768px){
   .weather-inner{padding:0 24px;}
   .weather-grid{grid-template-columns:1fr 1fr;gap:0;}
-  .wc-item{padding:0 20px 24px;border-right:none;border-bottom:1px solid rgba(200,218,234,.07);}
-  .wc-item:nth-child(odd){padding-left:0;border-right:1px solid rgba(200,218,234,.07);}
+  .wc-item{padding:0 20px 24px;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}
+  .wc-item:nth-child(odd){padding-left:0;border-right:1px solid rgba(255,255,255,.1);}
   .wc-item:nth-child(3),.wc-item:nth-child(4){border-bottom:none;}
   .fc-day{width:100px;}
+  .wc-note{display:none;}
 }
 
 /* ══ RESORT GALLERY ══ */
@@ -209,8 +210,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .ticket-num{color:var(--ice) !important;font-family:'Bebas Neue',sans-serif !important;font-size:17px !important;letter-spacing:1px !important;}
 .ticket-extra{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:3px;}
 .te-item{background:var(--ink-deep);padding:22px 28px;border-left:2px solid rgba(200,218,234,.2);}
-.te-label{font-size:11px;letter-spacing:2px;color:rgba(200,218,234,.4);margin-bottom:6px;}
-.te-name{font-family:'Shippori Mincho',serif;font-size:15px;font-weight:700;color:var(--snow);margin-bottom:4px;}
+.te-label{font-size:15px;font-weight:700;color:var(--snow);margin-bottom:4px;letter-spacing:.5px;}
+.te-name{font-family:'Shippori Mincho',serif;font-size:12px;color:rgba(245,243,239,.38);margin-bottom:10px;letter-spacing:1px;}
 .te-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--ice);letter-spacing:1px;}
 .te-desc{font-size:12px;color:rgba(245,243,239,.35);margin-top:4px;line-height:1.7;}
 .ticket-note{font-size:12px;color:rgba(245,243,239,.3);margin-top:20px;line-height:2;letter-spacing:.4px;}
@@ -441,25 +442,9 @@ body{padding-bottom:58px;}
     <p class="hero-eyebrow">NIIGATA · ECHIGO YUZAWA</p>
     <h1 class="hero-title">YUZAWA<br>NAKAZATO</h1>
     <p class="hero-jp">ゆ　ざ　わ　な　か　ざ　と</p>
-    <div class="hero-pillars">
-      <div class="hero-pillar">
-        <div class="hero-pillar-num">2,000<span class="unit">m</span></div>
-        <div class="hero-pillar-label">最長滑行</div>
-      </div>
-      <div class="hero-pillar-sep"></div>
-      <div class="hero-pillar">
-        <div class="hero-pillar-num">16<span class="unit">條</span></div>
-        <div class="hero-pillar-label">雪道</div>
-      </div>
-      <div class="hero-pillar-sep"></div>
-      <div class="hero-pillar">
-        <div class="hero-pillar-num">40<span class="unit">%</span></div>
-        <div class="hero-pillar-label">初學者雪道</div>
-      </div>
-    </div>
     <div class="hero-actions">
-      <a href="/index.php?route=common/snowing_yuzawa&category=group" class="btn-ice">立即報名常態班</a>
-      <a href="#overview" class="btn-brand">了解雪場</a>
+      <a href="https://www.iski.com.tw/index.php?route=common/snowing_buy" class="btn-ice">立即購課</a>
+      <a href="http://m.me/iSKIclub2019" target="_blank" class="btn-brand">諮詢客服</a>
     </div>
   </div>
 </section>
@@ -600,10 +585,10 @@ body{padding-bottom:58px;}
 <div class="section section-alt">
   <div class="inner">
     <div class="reveal">
-      <p class="eyebrow">Lift Ticket · 纜車票費用</p>
-      <h2 class="section-heading">纜車票<br>費用參考</h2>
+      <p class="eyebrow">Lift Ticket · 雪票費用</p>
+      <h2 class="section-heading">雪票<br>費用參考</h2>
       <p class="section-heading-jp" style="margin-bottom:12px;">リ　フ　ト　券　は　別　途　ご　購　入</p>
-      <p style="font-size:14px;color:rgba(200,218,234,.55);letter-spacing:1px;margin-bottom:44px;">※ iSKI 課程費用不含纜車票，請另行購買。</p>
+      <p style="font-size:14px;color:rgba(200,218,234,.55);letter-spacing:1px;margin-bottom:44px;">※ iSKI 課程費用不含雪票，請另行購買。</p>
     </div>
     <table class="ticket-table reveal rd1">
       <thead>
@@ -699,8 +684,8 @@ body{padding-bottom:58px;}
     <h2 class="cta-title">READY TO<br><span class="accent">RIDE?</span></h2>
   </div>
   <div class="cta-buttons">
-    <a href="/index.php?route=common/snowing_yuzawa&category=group" class="cta-btn-ice">立即報名常態班</a>
-    <a href="/index.php?route=common/snowing_yuzawa&category=private" class="cta-btn-outline">私人課程 →</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_buy" class="cta-btn-ice">立即報名</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_yuzawa&category=private" class="cta-btn-outline">查看私人課 →</a>
   </div>
 </div>
 
