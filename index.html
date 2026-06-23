@@ -600,6 +600,8 @@ body{padding-bottom:58px;}
 .masonry-hint::before{content:'';flex:1;height:1px;background:rgba(245,243,239,.07);}
 @media(max-width:768px){
   .masonry-grid{grid-template-columns:repeat(2,1fr);}
+  .masonry-item{height:160px !important;grid-column:span 1 !important;grid-row:span 1 !important;}
+  .masonry-item.masonry-text{height:120px !important;}
   .masonry-hint{padding:8px 24px 0;}
 }
 </style>
