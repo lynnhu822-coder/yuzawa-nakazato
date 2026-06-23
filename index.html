@@ -161,7 +161,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .forecast-row::-webkit-scrollbar{display:none;}
 .fc-day{flex:0 0 auto;width:120px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 14px;text-align:center;}
 .fc-date{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.45);margin-bottom:8px;}
-.fc-wx{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:10px;line-height:1.4;min-height:32px;}
+.fc-wx{font-size:24px;color:rgba(255,255,255,.6);margin-bottom:10px;line-height:1.4;min-height:36px;}
 .fc-temp{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:1px;margin-bottom:4px;}
 .fc-temp .lo{color:rgba(255,255,255,.45);font-size:16px;margin-left:3px;}
 .fc-snow{font-size:11px;color:rgba(255,255,255,.5);}
@@ -925,7 +925,7 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 })();
 
 // Open-Meteo 即時雪況 + 週預測
-var weatherCodes={0:'晴天',1:'大致晴',2:'局部多雲',3:'陰天',45:'霧',48:'霜霧',51:'微雨',53:'小雨',55:'毛毛雨',71:'小雪',73:'降雪',75:'大雪',77:'雪粒',85:'陣雪',86:'大陣雪',95:'雷雨',96:'雷雪',99:'雷大雪'};
+var weatherCodes={0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌦️',71:'🌨️',73:'🌨️',75:'❄️',77:'🌨️',85:'🌨️',86:'❄️',95:'⛈️',96:'⛈️',99:'⛈️'};
 var weekDays=['日','一','二','三','四','五','六'];
 fetch('https://api.open-meteo.com/v1/forecast?latitude=36.895&longitude=138.886&elevation=380&current=temperature_2m,snowfall,snow_depth,weather_code,wind_speed_10m&daily=snowfall_sum,temperature_2m_max,temperature_2m_min,weather_code&timezone=Asia%2FTokyo&forecast_days=7')
   .then(function(r){return r.json();})
@@ -939,7 +939,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=36.895&longitude=138.886&
     document.getElementById('wc-depth').className='';
     document.getElementById('wc-depth').innerHTML='<span class="wc-val">'+Math.round(c.snow_depth*100)+'<span class="wc-unit">cm</span></span><div class="wc-sub">模型推算值</div>';
     document.getElementById('wc-wx').className='';
-    document.getElementById('wc-wx').innerHTML='<span class="wc-val" style="font-size:16px;letter-spacing:0;">'+(weatherCodes[c.weather_code]||'--')+'</span><div class="wc-sub">風速 '+c.wind_speed_10m.toFixed(0)+' km/h</div>';
+    document.getElementById('wc-wx').innerHTML='<span class="wc-val" style="font-size:40px;letter-spacing:0;line-height:1.2;">'+(weatherCodes[c.weather_code]||'--')+'</span><div class="wc-sub">風速 '+c.wind_speed_10m.toFixed(0)+' km/h</div>';
     var now=new Date();
     document.getElementById('wc-note').textContent='更新：'+now.toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'})+'　資料來源：Open-Meteo 氣象模型。積雪深度為模型推算值，非雪場實測。';
     // 週預測
