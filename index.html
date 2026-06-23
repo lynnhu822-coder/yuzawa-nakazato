@@ -347,6 +347,18 @@ body{padding-bottom:58px;}
   .footer-social{width:100%;justify-content:center;flex-wrap:nowrap;}
   .map-ping{display:none;}
 }
+/* ══ HERO VERTICAL MARQUEE ══ */
+.hero-vert-marquee{position:absolute;right:18px;top:0;bottom:0;z-index:3;overflow:hidden;width:14px;display:flex;justify-content:center;}
+.hero-vert-track{display:flex;flex-direction:column;animation:vertScroll 28s linear infinite;}
+.hero-vert-item{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:3px;color:rgba(200,218,234,.3);white-space:nowrap;}
+@keyframes vertScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+/* ══ TYPE SECTION ══ */
+.type-section{background:#0b0d10;overflow:hidden;padding:56px 0;position:relative;}
+.type-rotated{transform:rotate(-6deg);margin:0 -80px;}
+.type-track{display:flex;animation:typeScroll 22s linear infinite;width:max-content;}
+.type-word{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,10vw,140px);color:rgba(255,255,255,.9);letter-spacing:4px;white-space:nowrap;padding:0 24px;}
+.type-sep{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,10vw,140px);color:var(--ice);opacity:.45;padding:0 8px;}
+@keyframes typeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 </head>
 <body>
@@ -447,20 +459,29 @@ body{padding-bottom:58px;}
       <a href="http://m.me/iSKIclub2019" target="_blank" class="btn-brand">諮詢客服</a>
     </div>
   </div>
+  <div class="hero-vert-marquee">
+    <div class="hero-vert-track">
+      <span class="hero-vert-item">YUZAWA NAKAZATO · BEGINNER FRIENDLY · 常態團體課 · FAMILY &amp; KIDS · FUN RIDE ZONE · ECHIGO YUZAWA · </span>
+      <span class="hero-vert-item">YUZAWA NAKAZATO · BEGINNER FRIENDLY · 常態團體課 · FAMILY &amp; KIDS · FUN RIDE ZONE · ECHIGO YUZAWA · </span>
+    </div>
+  </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="marquee-item">YUZAWA NAKAZATO</span><span class="marquee-item">湯澤中里</span>
-    <span class="marquee-item">FUN RIDE ZONE</span><span class="marquee-item">BEGINNER FRIENDLY</span>
-    <span class="marquee-item">FAMILY &amp; KIDS</span><span class="marquee-item">ANGEL GELANDE</span>
-    <span class="marquee-item">POWDER SNOW</span><span class="marquee-item">BLUE TRAIN</span>
-    <span class="marquee-item">常態團體課</span><span class="marquee-item">YUZAWA NAKAZATO</span>
-    <span class="marquee-item">湯澤中里</span><span class="marquee-item">FUN RIDE ZONE</span>
-    <span class="marquee-item">BEGINNER FRIENDLY</span><span class="marquee-item">FAMILY &amp; KIDS</span>
-    <span class="marquee-item">ANGEL GELANDE</span><span class="marquee-item">POWDER SNOW</span>
-    <span class="marquee-item">BLUE TRAIN</span><span class="marquee-item">常態團體課</span>
+<!-- TYPE SECTION -->
+<div class="type-section">
+  <div class="type-rotated">
+    <div class="type-track">
+      <span class="type-word">YUZAWA NAKAZATO</span><span class="type-sep">·</span>
+      <span class="type-word">常態團體課</span><span class="type-sep">·</span>
+      <span class="type-word">BEGINNER FRIENDLY</span><span class="type-sep">·</span>
+      <span class="type-word">FAMILY &amp; KIDS</span><span class="type-sep">·</span>
+      <span class="type-word">FUN RIDE ZONE</span><span class="type-sep">·</span>
+      <span class="type-word">YUZAWA NAKAZATO</span><span class="type-sep">·</span>
+      <span class="type-word">常態團體課</span><span class="type-sep">·</span>
+      <span class="type-word">BEGINNER FRIENDLY</span><span class="type-sep">·</span>
+      <span class="type-word">FAMILY &amp; KIDS</span><span class="type-sep">·</span>
+      <span class="type-word">FUN RIDE ZONE</span><span class="type-sep">·</span>
+    </div>
   </div>
 </div>
 
