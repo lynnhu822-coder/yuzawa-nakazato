@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湯澤中里 · 常態團體課｜iSKI 日本滑雪學校</title>
+<link rel="icon" type="image/png" href="/image/catalog/logo_2-min.png">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="湯澤中里 · 常態團體課｜iSKI 日本滑雪學校" />
+<meta property="og:description" content="iSKI 常態團體課上課地點。零基礎也能在這裡愛上滑雪——Fun Ride Zone、魔毯教學區、兒童公園，適合初學者與親子家庭。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Bebas+Neue&family=Noto+Sans+TC:wght@300;400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#2c3540;
+  --ink-mid:#242e38;
+  --ink-deep:#161d24;
+  --ink-light:#2e3a46;
+  --snow:#f5f3ef;
+  --ice:#c8daea;
+  --brand:#00358E;
+  --charcoal:#53565A;
+  --yellow:#D4F53C;
+}
+html{scroll-behavior:smooth;overflow-x:clip;}
+body{background:var(--ink);color:var(--snow);font-family:'Noto Sans TC',sans-serif;font-weight:400;cursor:none;}
+
+.cursor{position:fixed;width:8px;height:8px;background:var(--snow);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s;mix-blend-mode:difference;}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(200,218,234,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s;mix-blend-mode:difference;}
+
+/* ══ NAV ══ */
+.countdown-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--yellow);border-bottom:1px solid rgba(0,0,0,.08);height:36px;display:flex;align-items:center;justify-content:center;gap:16px;font-family:'Noto Sans TC',sans-serif;font-size:11px;letter-spacing:1.5px;color:rgba(0,0,0,.7);transform:translateZ(0);will-change:transform;}
+.countdown-bar-nums{display:flex;align-items:center;gap:6px;}
+.countdown-bar-num{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--ink);letter-spacing:1px;min-width:22px;text-align:center;}
+.countdown-bar-sep{color:rgba(0,0,0,.3);font-size:13px;}
+.countdown-bar-label{font-size:9px;color:rgba(0,0,0,.45);letter-spacing:1px;}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(22,29,36,.9) 0%,transparent 100%);pointer-events:none;}
+.nav-logo{position:relative;z-index:1;margin-right:auto;}
+.nav-logo img{height:28px;width:auto;display:block;}
+.nav-cta{position:relative;z-index:1;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:var(--snow);border:1px solid rgba(245,243,239,.35);padding:10px 22px;text-decoration:none;transition:all .3s;}
+.nav-cta:hover{background:var(--brand);border-color:var(--brand);}
+.hamburger-btn{display:flex;position:relative;z-index:1;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px;}
+.hamburger-btn span{display:block;width:22px;height:1.5px;background:var(--snow);transition:all .3s;}
+.hamburger-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger-btn.open span:nth-child(2){opacity:0;}
+.hamburger-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:0;right:0;bottom:0;width:100%;z-index:99;background:rgba(26,28,30,.97);backdrop-filter:blur(12px);flex-direction:column;padding:100px 32px 48px;gap:0;overflow-y:auto;transform:translateX(100%);transition:transform .35s ease;}
+@media(min-width:481px){.mobile-menu{width:min(33vw,320px);}}
+.mobile-menu.open{display:flex;transform:translateX(0);}
+.mobile-menu-section{border-bottom:1px solid rgba(245,243,239,.08);padding:20px 0;}
+.mobile-menu-label{font-size:12px;letter-spacing:3px;color:var(--ice);text-transform:uppercase;margin-bottom:12px;}
+.mobile-menu-link{display:flex;justify-content:space-between;align-items:center;font-family:'Noto Sans TC',sans-serif;font-size:18px;font-weight:300;letter-spacing:2px;color:rgba(245,243,239,.85);text-decoration:none;padding:10px 0;transition:color .2s;}
+.mobile-menu-link:hover{color:var(--ice);}
+.mobile-menu-link::after{content:'→';font-size:14px;opacity:.4;}
+.mobile-menu-cta{margin-top:32px;display:block;background:var(--ice);color:var(--ink);font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:4px;text-align:center;padding:18px;text-decoration:none;}
+
+/* ══ HERO ══ */
+.hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to right,rgba(22,29,36,.85) 0%,rgba(22,29,36,.3) 55%,transparent 100%),
+             linear-gradient(to top,rgba(22,29,36,.75) 0%,transparent 55%);}
+.hero-content{position:relative;z-index:2;padding:0 60px 100px;width:100%;max-width:1200px;margin:0 auto;}
+.hero-badge{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;background:var(--ice);color:var(--ink);padding:5px 16px;display:inline-block;margin-bottom:18px;animation:fadeUp .9s ease .1s both;}
+.hero-eyebrow{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:300;letter-spacing:5px;color:var(--ice);opacity:.75;margin-bottom:16px;display:flex;align-items:center;gap:14px;animation:fadeUp .9s ease .2s both;}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--ice);opacity:.5;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,10vw,140px);line-height:.88;letter-spacing:2px;color:var(--snow);margin-bottom:8px;animation:fadeUp .9s ease .35s both;}
+.hero-jp{font-family:'Shippori Mincho',serif;font-size:clamp(13px,1.6vw,20px);letter-spacing:10px;color:rgba(200,218,234,.42);margin-bottom:40px;animation:fadeUp .9s ease .5s both;}
+.hero-pillars{display:flex;gap:32px;margin-bottom:48px;animation:fadeUp .9s ease .62s both;flex-wrap:wrap;}
+.hero-pillar{display:flex;flex-direction:column;gap:4px;}
+.hero-pillar-num{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--ice);line-height:1;}
+.hero-pillar-num .unit{font-size:16px;color:rgba(200,218,234,.6);margin-left:2px;}
+.hero-pillar-label{font-size:12px;letter-spacing:2px;color:rgba(245,243,239,.45);}
+.hero-pillar-sep{width:1px;background:rgba(200,218,234,.15);align-self:stretch;margin:4px 0;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .9s ease .75s both;}
+.btn-ice{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;background:var(--ice);color:var(--ink);padding:14px 34px;text-decoration:none;display:inline-block;transition:all .3s;}
+.btn-ice:hover{background:var(--snow);}
+.btn-brand{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;background:#00358E;border:1px solid #00358E;padding:14px 22px;transition:all .3s;}
+.btn-brand:hover{background:#002a70;border-color:#002a70;}
+.btn-brand::after{content:'→';transition:transform .3s;}
+.btn-brand:hover::after{transform:translateX(4px);}
+
+/* ══ MARQUEE ══ */
+.marquee-wrap{overflow:hidden;border-top:1px solid rgba(200,218,234,.06);border-bottom:1px solid rgba(200,218,234,.06);padding:16px 0;background:var(--ink-mid);}
+.marquee-track{display:flex;gap:52px;animation:marquee 34s linear infinite;white-space:nowrap;width:max-content;}
+.marquee-item{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:4px;color:rgba(200,218,234,.22);display:flex;align-items:center;gap:52px;}
+.marquee-item::after{content:'✦';color:var(--ice);opacity:.35;font-size:8px;}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══ SECTION 共用 ══ */
+.section{padding:100px 0;}
+.section-alt{background:var(--ink-mid);}
+.section-deep{background:var(--ink-deep);}
+.inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--ice);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--ice);}
+.section-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);letter-spacing:2px;line-height:1;color:var(--snow);margin-bottom:8px;}
+.section-heading-jp{font-family:'Shippori Mincho',serif;font-size:14px;letter-spacing:6px;color:rgba(200,218,234,.25);margin-bottom:56px;}
+.body-text{font-size:16px;color:rgba(245,243,239,.72);line-height:2.3;letter-spacing:.4px;}
+.body-text strong{color:var(--snow);}
+
+/* ══ STORY BLOCK ══ */
+.story-block{padding:40px 60px 0;max-width:1200px;margin:0 auto;}
+.story-quote{font-family:'Shippori Mincho',serif;font-size:clamp(17px,2.2vw,22px);color:rgba(245,243,239,.85);line-height:2;letter-spacing:2px;margin-bottom:36px;padding-left:20px;border-left:2px solid rgba(200,218,234,.35);}
+
+/* ══ RESORT OVERVIEW ══ */
+.resort-overview{background:var(--ink-deep);}
+.resort-overview-map{padding:32px 60px 24px;}
+.map-label{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:rgba(245,243,239,.35);margin-bottom:10px;}
+.map-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,52px);letter-spacing:.1em;color:var(--ice);line-height:1;margin-bottom:4px;}
+.map-sub{font-size:12px;color:rgba(245,243,239,.3);letter-spacing:.15em;margin-bottom:16px;}
+.map-intro-text{font-size:14px;color:rgba(245,243,239,.52);letter-spacing:.3px;line-height:1.9;margin-bottom:24px;max-width:640px;}
+.map-wrap-v2{position:relative;border:1px solid rgba(255,255,255,.07);overflow:hidden;}
+.map-wrap-v2 img{width:100%;height:auto;display:block;}
+.map-ping{position:absolute;bottom:16px;right:16px;background:rgba(22,29,36,.9);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);padding:8px 14px;display:flex;align-items:center;gap:8px;}
+.map-ping-dot{width:7px;height:7px;background:var(--ice);border-radius:50%;animation:pingPulse 2s ease-in-out infinite;}
+@keyframes pingPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.map-ping-label{font-size:11px;font-weight:700;color:var(--snow);letter-spacing:.1em;}
+.resort-overview-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid rgba(245,243,239,.06);border-bottom:1px solid rgba(245,243,239,.06);}
+.stat-col{padding:28px 40px;border-right:1px solid rgba(245,243,239,.06);}
+.stat-col:last-child{border-right:none;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);color:var(--ice);line-height:1;}
+.stat-num .unit{font-size:clamp(18px,2vw,26px);color:rgba(200,218,234,.6);margin-left:4px;}
+.stat-label{font-size:12px;letter-spacing:2px;color:rgba(245,243,239,.45);margin-top:6px;}
+.stat-diff{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.resort-overview-course{padding:24px 60px;}
+
+/* 課程卡 */
+.course-card{padding:24px 28px;border:1px solid rgba(200,218,234,.2);border-left:3px solid var(--ice);background:rgba(200,218,234,.03);}
+.cc-title{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:3px;color:var(--ice);margin-bottom:14px;}
+.cc-row{display:grid;grid-template-columns:80px 1fr;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid rgba(245,243,239,.04);}
+.cc-row:last-child{border-bottom:none;}
+.cc-key{color:rgba(245,243,239,.35);}
+.cc-val{color:rgba(245,243,239,.78);line-height:1.7;}
+
+/* ══ WEATHER WIDGET ══ */
+.weather-strip{background:var(--ink-deep);border-top:1px solid rgba(200,218,234,.08);border-bottom:1px solid rgba(200,218,234,.08);}
+.weather-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.weather-header{display:flex;align-items:center;gap:10px;padding:32px 0 24px;}
+.wc-dot{width:6px;height:6px;border-radius:50%;background:var(--ice);animation:wPulse 2s ease-in-out infinite;}
+@keyframes wPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.weather-title{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(200,218,234,.5);}
+.weather-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-bottom:32px;}
+.wc-item{padding:0 32px;border-right:1px solid rgba(200,218,234,.08);}
+.wc-item:first-child{padding-left:0;}
+.wc-item:last-child{border-right:none;}
+.wc-label{font-size:10px;letter-spacing:2.5px;color:rgba(200,218,234,.35);margin-bottom:12px;text-transform:uppercase;}
+.wc-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);letter-spacing:1px;color:var(--snow);line-height:1;}
+.wc-unit{font-size:clamp(18px,2vw,26px);color:rgba(200,218,234,.5);margin-left:4px;}
+.wc-sub{font-size:11px;color:rgba(245,243,239,.25);margin-top:6px;}
+.wc-note{font-size:10px;color:rgba(200,218,234,.2);padding-bottom:0;letter-spacing:.4px;}
+.wc-loading{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);color:rgba(200,218,234,.15);letter-spacing:1px;line-height:1;}
+
+/* 週預測：橫向滑動 */
+.forecast-section{border-top:1px solid rgba(200,218,234,.07);padding:20px 0 28px;}
+.forecast-label{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:3px;color:rgba(200,218,234,.35);margin-bottom:16px;}
+.forecast-row{display:flex;gap:3px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.forecast-row::-webkit-scrollbar{display:none;}
+.fc-day{flex:0 0 auto;width:120px;background:rgba(200,218,234,.03);border:1px solid rgba(200,218,234,.07);padding:16px 14px;text-align:center;}
+.fc-date{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:1.5px;color:rgba(200,218,234,.4);margin-bottom:8px;}
+.fc-wx{font-size:11px;color:rgba(245,243,239,.4);margin-bottom:10px;line-height:1.4;min-height:28px;}
+.fc-temp{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--snow);letter-spacing:1px;margin-bottom:4px;}
+.fc-temp .lo{color:rgba(200,218,234,.4);font-size:15px;margin-left:3px;}
+.fc-snow{font-size:11px;color:rgba(200,218,234,.6);}
+.fc-snow span{font-family:'Bebas Neue',sans-serif;font-size:14px;}
+@media(max-width:768px){
+  .weather-inner{padding:0 24px;}
+  .weather-grid{grid-template-columns:1fr 1fr;gap:0;}
+  .wc-item{padding:0 20px 24px;border-right:none;border-bottom:1px solid rgba(200,218,234,.07);}
+  .wc-item:nth-child(odd){padding-left:0;border-right:1px solid rgba(200,218,234,.07);}
+  .wc-item:nth-child(3),.wc-item:nth-child(4){border-bottom:none;}
+  .fc-day{width:100px;}
+}
+
+/* ══ RESORT GALLERY ══ */
+.resort-gallery{overflow:hidden;display:flex;cursor:grab;user-select:none;}
+.resort-gallery.grabbing{cursor:grabbing;}
+.gallery-track{display:flex;gap:3px;will-change:transform;}
+.resort-gallery-item{flex:0 0 auto;width:400px;overflow:hidden;}
+.resort-gallery-item img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .6s;}
+.resort-gallery-item:hover img{transform:scale(1.04);}
+.resort-gallery-hint{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:12px 60px 0;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(245,243,239,.35);}
+.resort-gallery-hint::before{content:'';flex:1;height:1px;background:rgba(245,243,239,.08);}
+
+/* ══ FEAT LIST ══ */
+.feat-list{display:flex;flex-direction:column;gap:2px;}
+.feat-row{display:grid;grid-template-columns:52px 1fr;background:rgba(255,255,255,.025);border:1px solid rgba(245,243,239,.07);overflow:hidden;transition:border-color .3s;cursor:none;}
+.feat-row:hover{border-color:rgba(200,218,234,.3);}
+.feat-row-idx{background:rgba(200,218,234,.04);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:15px;color:rgba(200,218,234,.2);writing-mode:vertical-rl;transition:background .3s;}
+.feat-row:hover .feat-row-idx{background:rgba(200,218,234,.1);color:rgba(200,218,234,.5);}
+.feat-row-body{padding:20px 24px;}
+.feat-row-t{font-family:'Shippori Mincho',serif;font-size:18px;font-weight:700;color:var(--snow);letter-spacing:2px;margin-bottom:7px;}
+.feat-row-d{font-size:15px;color:rgba(245,243,239,.55);line-height:1.9;letter-spacing:.4px;}
+
+/* ══ YouTube ══ */
+.yt-wrap{position:relative;padding-bottom:56.25%;background:#000;overflow:hidden;}
+.yt-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+/* ══ LIFT TICKET ══ */
+.ticket-table{width:100%;border-collapse:collapse;margin-top:32px;}
+.ticket-table th{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:2px;color:rgba(200,218,234,.45);font-weight:400;text-align:right;padding:10px 16px;border-bottom:1px solid rgba(245,243,239,.06);}
+.ticket-table th:first-child{text-align:left;}
+.ticket-table td{padding:14px 16px;border-bottom:1px solid rgba(245,243,239,.04);font-size:14px;color:rgba(245,243,239,.72);text-align:right;}
+.ticket-table td:first-child{text-align:left;font-family:'Shippori Mincho',serif;font-size:15px;color:var(--snow);font-weight:700;letter-spacing:1px;}
+.ticket-table tr:last-child td{border-bottom:none;}
+.ticket-num{color:var(--ice) !important;font-family:'Bebas Neue',sans-serif !important;font-size:17px !important;letter-spacing:1px !important;}
+.ticket-extra{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:3px;}
+.te-item{background:var(--ink-deep);padding:22px 28px;border-left:2px solid rgba(200,218,234,.2);}
+.te-label{font-size:11px;letter-spacing:2px;color:rgba(200,218,234,.4);margin-bottom:6px;}
+.te-name{font-family:'Shippori Mincho',serif;font-size:15px;font-weight:700;color:var(--snow);margin-bottom:4px;}
+.te-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--ice);letter-spacing:1px;}
+.te-desc{font-size:12px;color:rgba(245,243,239,.35);margin-top:4px;line-height:1.7;}
+.ticket-note{font-size:12px;color:rgba(245,243,239,.3);margin-top:20px;line-height:2;letter-spacing:.4px;}
+.ticket-link{display:inline-flex;align-items:center;gap:8px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2.5px;color:var(--ice);text-decoration:none;margin-top:24px;border:1px solid rgba(200,218,234,.25);padding:10px 22px;transition:all .3s;}
+.ticket-link:hover{background:rgba(200,218,234,.07);}
+.ticket-link::after{content:'→';transition:transform .3s;}
+.ticket-link:hover::after{transform:translateX(4px);}
+
+/* ══ BEYOND ══ */
+.beyond-section{background:var(--ink);padding:100px 0;}
+.beyond-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.beyond-block-title{font-family:'Shippori Mincho',serif;font-size:13px;letter-spacing:5px;color:var(--ice);margin-bottom:32px;display:flex;align-items:center;gap:12px;}
+.beyond-block-title::before{content:'';width:20px;height:1px;background:var(--ice);}
+.nearby-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-top:48px;}
+.nearby-card{background:var(--ink-deep);overflow:hidden;}
+.nearby-img{height:200px;overflow:hidden;}
+.nearby-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s;}
+.nearby-card:hover .nearby-img img{transform:scale(1.05);}
+.nearby-body{padding:24px 26px 28px;}
+.nearby-type{font-size:10px;letter-spacing:3px;color:rgba(200,218,234,.45);margin-bottom:8px;font-family:'Bebas Neue',sans-serif;}
+.nearby-name{font-family:'Shippori Mincho',serif;font-size:19px;font-weight:700;color:var(--snow);letter-spacing:2px;margin-bottom:10px;}
+.nearby-desc{font-size:14px;color:rgba(245,243,239,.55);line-height:1.9;}
+
+/* ══ CTA ══ */
+.cta-wrap{background:var(--ink-deep);padding:80px 60px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden;}
+.cta-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(200,218,234,.05) 0%,transparent 70%);pointer-events:none;}
+.cta-kicker{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:4px;color:rgba(200,218,234,.4);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.cta-kicker::before{content:'';width:18px;height:1px;background:var(--ice);opacity:.4;}
+.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5.5vw,76px);letter-spacing:2px;line-height:.92;color:var(--snow);}
+.cta-title .accent{color:var(--ice);}
+.cta-buttons{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1;}
+.cta-btn-ice{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:3px;background:var(--ice);color:var(--ink);padding:15px 36px;text-decoration:none;text-align:center;transition:all .3s;border:2px solid var(--ice);display:block;}
+.cta-btn-ice:hover{background:var(--snow);border-color:var(--snow);}
+.cta-btn-outline{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:3px;background:transparent;color:rgba(245,243,239,.65);padding:15px 36px;text-decoration:none;text-align:center;transition:all .3s;border:2px solid rgba(245,243,239,.2);display:block;}
+.cta-btn-outline:hover{color:var(--snow);border-color:rgba(245,243,239,.5);}
+
+/* ══ STICKY PLANNER BAR ══ */
+.sticky-planner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:rgba(22,29,36,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(200,218,234,.12);display:flex;align-items:center;justify-content:space-between;padding:10px 24px 10px 20px;padding-bottom:calc(10px + env(safe-area-inset-bottom));gap:12px;}
+.sp-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0;}
+.sp-label{font-size:13px;color:rgba(245,243,239,.65);letter-spacing:.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sp-btn{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2.5px;background:var(--ice);color:var(--ink);border:none;padding:10px 20px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s;}
+.sp-btn:hover{background:var(--snow);}
+.sp-messenger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:#0084FF;border-radius:50%;flex-shrink:0;text-decoration:none;transition:background .2s;}
+.sp-messenger:hover{background:#006fd6;}
+
+/* ══ PLANNER OVERLAY ══ */
+.planner-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:600;backdrop-filter:blur(3px);}
+.planner-overlay.open{display:block;}
+
+/* ══ PLANNER BOTTOM SHEET ══ */
+.planner-sheet{position:fixed;bottom:0;left:0;right:0;z-index:700;background:#1a2230;border-top:1px solid rgba(200,218,234,.15);border-radius:16px 16px 0 0;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,0,.67,0);max-height:85vh;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom);}
+.planner-sheet.open{transform:translateY(0);transition:transform .35s cubic-bezier(.34,1.3,.64,1);}
+.ps-handle{width:36px;height:4px;background:rgba(245,243,239,.18);border-radius:2px;margin:12px auto 0;}
+.ps-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px 12px;}
+.ps-title{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;color:var(--ice);}
+.ps-close{background:none;border:1px solid rgba(245,243,239,.2);color:rgba(245,243,239,.6);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.ps-close:hover{border-color:rgba(245,243,239,.5);color:var(--snow);}
+.ps-divider{height:1px;background:rgba(245,243,239,.07);margin:0 24px;}
+.ps-body{overflow-y:auto;padding:24px;flex:1;}
+
+/* Planner steps */
+.ps-step-label{font-size:11px;letter-spacing:3px;color:rgba(200,218,234,.45);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.ps-step-label::before{content:'';width:14px;height:1px;background:var(--ice);opacity:.5;}
+.ps-question{font-family:'Shippori Mincho',serif;font-size:20px;color:var(--snow);letter-spacing:1px;margin-bottom:24px;line-height:1.5;}
+.ps-options{display:flex;flex-direction:column;gap:8px;}
+.ps-option{background:rgba(200,218,234,.05);border:1px solid rgba(200,218,234,.15);padding:16px 20px;cursor:pointer;text-align:left;color:rgba(245,243,239,.8);font-size:15px;letter-spacing:.5px;transition:all .2s;border-radius:2px;width:100%;}
+.ps-option:hover{border-color:var(--ice);color:var(--snow);background:rgba(200,218,234,.1);}
+
+/* Planner result */
+.ps-result{animation:fadeUp .4s ease both;}
+.ps-result-tag{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:3px;background:var(--ice);color:var(--ink);display:inline-block;padding:4px 12px;margin-bottom:16px;}
+.ps-result-title{font-family:'Shippori Mincho',serif;font-size:22px;font-weight:700;color:var(--snow);margin-bottom:12px;line-height:1.4;}
+.ps-result-body{font-size:15px;color:rgba(245,243,239,.65);line-height:2;margin-bottom:28px;}
+.ps-result-cta{display:block;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:3px;background:var(--ice);color:var(--ink);padding:16px;text-decoration:none;transition:background .2s;margin-bottom:8px;}
+.ps-result-cta:hover{background:var(--snow);}
+.ps-result-cta-sec{display:block;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:rgba(245,243,239,.5);padding:12px;text-decoration:none;border:1px solid rgba(245,243,239,.15);transition:all .2s;}
+.ps-result-cta-sec:hover{color:var(--snow);border-color:rgba(245,243,239,.4);}
+.ps-restart{background:none;border:none;color:rgba(200,218,234,.4);font-size:12px;letter-spacing:1.5px;cursor:pointer;margin-top:16px;display:block;width:100%;text-align:center;padding:8px;transition:color .2s;}
+.ps-restart:hover{color:var(--ice);}
+
+/* ══ SNOWBOARDER FLOATING ICON ══ */
+
+
+/* ══ FOOTER ══ */
+footer{border-top:1px solid rgba(245,243,239,.07);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;background:var(--ink);flex-wrap:wrap;gap:16px;}
+/* sticky bar 高度補償 */
+body{padding-bottom:58px;}
+.footer-social{display:flex;gap:16px;align-items:center;}
+.footer-social-link{display:flex;align-items:center;gap:7px;font-size:12px;letter-spacing:1.5px;color:rgba(245,243,239,.45);text-decoration:none;transition:color .3s;}
+.footer-social-link:hover{color:rgba(245,243,239,.85);}
+.footer-divider{width:1px;height:14px;background:rgba(245,243,239,.12);}
+.footer-copy{font-size:11px;letter-spacing:1px;color:rgba(245,243,239,.35);}
+
+/* ══ REVEAL ══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .85s ease,transform .85s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:.12s;}.rd2{transition-delay:.22s;}.rd3{transition-delay:.32s;}.rd4{transition-delay:.42s;}
+
+/* ══ MOBILE ══ */
+@media(hover:none){.cursor,.cursor-ring{display:none;}}
+@media(max-width:768px){
+  nav{padding:20px 24px;}
+  .nav-cta{display:none;}
+  .floating-messenger .fm-text{display:none;}
+  .floating-messenger{padding:13px;border-radius:50%;}
+  .hero-content{padding:0 24px 72px;}
+  .hero-pillars{gap:20px;}
+  .hero-jp{letter-spacing:6px;}
+  .section{padding:72px 0;}
+  .section-heading{font-size:clamp(36px,8vw,48px);}
+  .inner{padding:0 24px;}
+  .story-block{padding:28px 24px 0;}
+  .resort-overview-map{padding:24px 24px 16px;}
+  .resort-overview-stats{grid-template-columns:1fr 1fr 1fr;}
+  .stat-col{padding:20px 16px;}
+  .stat-num{font-size:clamp(32px,8vw,48px);}
+  .stat-num .unit{font-size:14px;}
+  .stat-label{font-size:10px;}
+  .resort-overview-course{padding:20px 24px;}
+  .resort-gallery-item{width:min(260px,78vw);}
+  .resort-gallery-hint{padding:8px 24px 0;}
+  .weather-inner{padding:0 24px;}
+  .weather-grid{grid-template-columns:1fr 1fr;}
+  [style*="padding:32px 60px"]{padding:20px 24px 0!important;}
+  [style*="padding:12px 60px"]{padding:8px 24px 0!important;}
+  .ticket-extra{grid-template-columns:1fr;}
+  .beyond-inner{padding:0 24px;}
+  .beyond-section{padding:72px 0;}
+  .nearby-grid{grid-template-columns:1fr;}
+  .cta-wrap{grid-template-columns:1fr;padding:48px 24px;}
+  footer{flex-direction:column;gap:20px;padding:32px 24px;}
+  .footer-social{width:100%;justify-content:center;flex-wrap:nowrap;}
+  .map-ping{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- SNOW EFFECT -->
+<style>
+#snow-container{position:fixed;top:0;left:0;width:100%;height:100vh;pointer-events:none;z-index:9990;overflow:hidden;opacity:1;transition:opacity 1.5s ease;}
+#snow-container.fade-out{opacity:0;}
+.snowflake{position:absolute;top:-10px;border-radius:50%;background:rgba(200,218,234,0.9);animation:snowfall linear infinite;}
+@keyframes snowfall{0%{transform:translateY(0) translateX(0);}25%{transform:translateY(25vh) translateX(8px);}50%{transform:translateY(50vh) translateX(-6px);}75%{transform:translateY(75vh) translateX(10px);}100%{transform:translateY(105vh) translateX(-4px);}}
+</style>
+<div id="snow-container"></div>
+<script>
+(function(){
+  var c=document.getElementById('snow-container');
+  for(var i=0;i<40;i++){
+    var el=document.createElement('div');
+    el.className='snowflake';
+    var s=Math.random()*4+2,l=Math.random()*100,d=Math.random()*6+5,delay=Math.random()*4,o=Math.random()*0.5+0.3;
+    el.style.cssText='width:'+s+'px;height:'+s+'px;left:'+l+'%;opacity:'+o+';animation-duration:'+d+'s;animation-delay:'+delay+'s;';
+    c.appendChild(el);
+  }
+  setTimeout(function(){c.classList.add('fade-out');setTimeout(function(){c.style.display='none';},1500);},5000);
+})();
+</script>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- COUNTDOWN BAR -->
+<div class="countdown-bar" id="countdownBar">
+  <span>頭香優惠</span>
+  <div class="countdown-bar-nums">
+    <span class="countdown-bar-num" id="cbDays">--</span><span class="countdown-bar-label">天</span>
+    <span class="countdown-bar-sep">:</span>
+    <span class="countdown-bar-num" id="cbHours">--</span><span class="countdown-bar-label">時</span>
+    <span class="countdown-bar-sep">:</span>
+    <span class="countdown-bar-num" id="cbMins">--</span><span class="countdown-bar-label">分</span>
+    <span class="countdown-bar-sep">:</span>
+    <span class="countdown-bar-num" id="cbSecs">--</span><span class="countdown-bar-label">秒</span>
+  </div>
+  <a href="http://m.me/iSKIclub2019" target="_blank" style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:2px;color:var(--ink);text-decoration:none;border:1px solid rgba(0,0,0,.3);padding:3px 12px;transition:background .2s;" onmouseover="this.style.background='rgba(0,0,0,.08)'" onmouseout="this.style.background='transparent'">立即詢問 →</a>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/login" class="mobile-menu-link">會員中心</a>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">越後湯澤 課程</p>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_buy" class="mobile-menu-link">常態團體課 報名</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_yuzawa&category=private" class="mobile-menu-link">越後湯澤 私人課</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">越後湯澤 雪場</p>
+    <a href="#" class="mobile-menu-link">湯澤中里（本頁）</a>
+    <a href="#" class="mobile-menu-link">石打丸山</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">其他目的地</p>
+    <a href="/index.php?route=common/snowing_hokkaido&category=teine" class="mobile-menu-link">北海道手稻</a>
+    <a href="/index.php?route=common/snowing_zao" class="mobile-menu-link">東北藏王</a>
+    <a href="/index.php?route=common/snowing_hokkaido&category=rusutsu" class="mobile-menu-link">留壽都</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">服務</p>
+    <a href="https://www.iski-select.com.tw/pages/rental" target="_blank" class="mobile-menu-link">日本雪具租借 &amp; 倉儲</a>
+    <a href="/" class="mobile-menu-link">iSKI 首頁</a>
+  </div>
+  <a href="https://www.iski.com.tw/index.php?route=common/snowing_buy" class="mobile-menu-cta" target="_blank">立即報名 常態團體課 →</a>
+</div>
+
+<!-- NAV -->
+<nav id="globalNav">
+  <a href="https://www.iski.com.tw/ski-school" class="nav-logo">
+    <img src="https://stage.iski.com.tw/image/catalog/snowing/01.home/link/M/M_Website_home logo01.png" alt="iSKI">
+  </a>
+  <div style="display:flex;align-items:center;gap:12px;position:relative;z-index:1;">
+    <a href="http://m.me/iSKIclub2019" class="nav-cta" target="_blank">聯絡客服</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="選單" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/off-shot4.jpg?_t=1781147816" alt="湯澤中里">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge">常態團體課 · BEGINNER &amp; FAMILY</span>
+    <p class="hero-eyebrow">NIIGATA · ECHIGO YUZAWA</p>
+    <h1 class="hero-title">YUZAWA<br>NAKAZATO</h1>
+    <p class="hero-jp">ゆ　ざ　わ　な　か　ざ　と</p>
+    <div class="hero-pillars">
+      <div class="hero-pillar">
+        <div class="hero-pillar-num">2,000<span class="unit">m</span></div>
+        <div class="hero-pillar-label">最長滑行</div>
+      </div>
+      <div class="hero-pillar-sep"></div>
+      <div class="hero-pillar">
+        <div class="hero-pillar-num">16<span class="unit">條</span></div>
+        <div class="hero-pillar-label">雪道</div>
+      </div>
+      <div class="hero-pillar-sep"></div>
+      <div class="hero-pillar">
+        <div class="hero-pillar-num">40<span class="unit">%</span></div>
+        <div class="hero-pillar-label">初學者雪道</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="/index.php?route=common/snowing_yuzawa&category=group" class="btn-ice">立即報名常態班</a>
+      <a href="#overview" class="btn-brand">了解雪場</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">YUZAWA NAKAZATO</span><span class="marquee-item">湯澤中里</span>
+    <span class="marquee-item">FUN RIDE ZONE</span><span class="marquee-item">BEGINNER FRIENDLY</span>
+    <span class="marquee-item">FAMILY &amp; KIDS</span><span class="marquee-item">ANGEL GELANDE</span>
+    <span class="marquee-item">POWDER SNOW</span><span class="marquee-item">BLUE TRAIN</span>
+    <span class="marquee-item">常態團體課</span><span class="marquee-item">YUZAWA NAKAZATO</span>
+    <span class="marquee-item">湯澤中里</span><span class="marquee-item">FUN RIDE ZONE</span>
+    <span class="marquee-item">BEGINNER FRIENDLY</span><span class="marquee-item">FAMILY &amp; KIDS</span>
+    <span class="marquee-item">ANGEL GELANDE</span><span class="marquee-item">POWDER SNOW</span>
+    <span class="marquee-item">BLUE TRAIN</span><span class="marquee-item">常態團體課</span>
+  </div>
+</div>
+
+<!-- STORY BLOCK -->
+<div class="story-block reveal" id="overview">
+  <p class="story-quote">第一次讓板子動起來的那一秒——你會記得很久。</p>
+</div>
+
+<!-- RESORT OVERVIEW -->
+<div class="resort-overview reveal">
+  <!-- 地圖 -->
+  <div class="resort-overview-map">
+    <p class="map-label">TRAIL MAP</p>
+    <h3 class="map-heading">湯澤中里</h3>
+    <p class="map-sub">YUZAWA NAKAZATO</p>
+    <p class="map-intro-text">寬闊平緩的魔毯初學區、Fun Ride Zone 主題遊樂雪道、專為孩子設計的兒童公園，零基礎也能找到屬於自己的節奏。</p>
+    <div class="map-wrap-v2">
+      <img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-1-0.jpg" alt="湯澤中里雪場地圖">
+      <div class="map-ping"><div class="map-ping-dot"></div><span class="map-ping-label">NIIGATA · JAPAN</span></div>
+    </div>
+  </div>
+  <!-- 數字三欄 -->
+  <div class="resort-overview-stats">
+    <div class="stat-col reveal rd1">
+      <div class="stat-num">2,000<span class="unit">m</span></div>
+      <div class="stat-label">最長滑行</div>
+    </div>
+    <div class="stat-col reveal rd2">
+      <div class="stat-num">16<span class="unit">條</span></div>
+      <div class="stat-label">雪道 · 2 魔毯</div>
+    </div>
+    <div class="stat-col reveal rd3">
+      <div class="stat-num">40<span class="unit">%</span></div>
+      <div class="stat-label">初學者雪道</div>
+      <div class="stat-diff">
+        <span style="font-size:10px;letter-spacing:1.5px;padding:3px 8px;border:1px solid rgba(74,158,255,.4);color:rgba(74,158,255,.8);">初 40%</span>
+        <span style="font-size:10px;letter-spacing:1.5px;padding:3px 8px;border:1px solid rgba(0,53,142,.5);color:var(--ice);">中 30%</span>
+        <span style="font-size:10px;letter-spacing:1.5px;padding:3px 8px;border:1px solid rgba(192,57,43,.5);color:rgba(220,100,80,.9);">高 30%</span>
+      </div>
+    </div>
+  </div>
+  <!-- 課程資訊 -->
+  <div class="resort-overview-course">
+    <div class="course-card">
+      <div class="cc-title">常態團體課 — Course Info</div>
+      <div class="cc-row"><span class="cc-key">適合對象</span><span class="cc-val">初學者、親子家庭</span></div>
+      <div class="cc-row"><span class="cc-key">上課地點</span><span class="cc-val">湯澤中里滑雪場</span></div>
+      <div class="cc-row"><span class="cc-key">開班方式</span><span class="cc-val">1 人即可成班，無程度限制</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 即時雪況 -->
+<div class="weather-strip">
+  <div class="weather-inner">
+    <div class="weather-header">
+      <div class="wc-dot"></div>
+      <div class="weather-title">LIVE CONDITIONS · 即時雪況</div>
+    </div>
+    <div class="weather-grid" id="weatherGrid">
+      <div class="wc-item"><div class="wc-label">TEMPERATURE</div><div class="wc-loading" id="wc-temp">--</div></div>
+      <div class="wc-item"><div class="wc-label">TODAY SNOWFALL</div><div class="wc-loading" id="wc-snow">--</div></div>
+      <div class="wc-item"><div class="wc-label">SNOW DEPTH</div><div class="wc-loading" id="wc-depth">--</div></div>
+      <div class="wc-item"><div class="wc-label">CONDITIONS</div><div class="wc-loading" id="wc-wx">--</div></div>
+    </div>
+    <div class="wc-note" id="wc-note">資料來源：Open-Meteo 氣象模型。積雪深度為模型推算值，非雪場實測。</div>
+    <div class="forecast-section">
+      <div class="forecast-label">7 DAY FORECAST · 一週預報</div>
+      <div class="forecast-row" id="forecastRow"><div style="color:rgba(200,218,234,.3);font-size:12px;letter-spacing:1px;padding:12px 0;">載入中…</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div style="padding:3px 0 0;">
+  <div class="resort-gallery">
+    <div class="gallery-track">
+      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-A-1.jpeg" alt="中里全景"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/__young2.jpg?_t=1781149030" alt="滑雪學員"></div>
+      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-B-1.jpg" alt="雪道"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/funride3.jpg?_t=1781151091" alt="Fun Ride Zone"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/off-shot3.jpg?_t=1781149030" alt="滑雪現場"></div>
+      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M//M_NAKAZATO-C-1.jpeg" alt="藍色列車"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/angelgelande3.jpg?_t=1781151091" alt="天使坡"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/view1.jpg?_t=1781149030" alt="雪場景觀"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/young4.jpg?_t=1781149030" alt="學員照片"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-A-1.jpeg" alt="中里全景"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/__young2.jpg?_t=1781149030" alt="滑雪學員"></div>
+      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-B-1.jpg" alt="雪道"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/funride3.jpg?_t=1781151091" alt="Fun Ride Zone"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/off-shot3.jpg?_t=1781149030" alt="滑雪現場"></div>
+      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M//M_NAKAZATO-C-1.jpeg" alt="藍色列車"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/angelgelande3.jpg?_t=1781151091" alt="天使坡"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/view1.jpg?_t=1781149030" alt="雪場景觀"></div>
+      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/young4.jpg?_t=1781149030" alt="學員照片"></div>
+    </div>
+  </div>
+  <p class="resort-gallery-hint">SWIPE TO EXPLORE</p>
+</div>
+
+<!-- 雪場特色 -->
+<div style="max-width:1200px;margin:0 auto;padding:32px 60px 0;">
+  <div class="feat-list reveal">
+    <div class="feat-row"><div class="feat-row-idx">01</div><div class="feat-row-body"><h4 class="feat-row-t">超好玩 Fun Ride Zone</h4><p class="feat-row-d">四個主題區域，以「邊玩邊進步」為理念——透過滑行時的各種動作，自然學會如何控制板子。是最受孩子喜愛的雪場設施，大人一起玩也不奇怪。</p></div></div>
+    <div class="feat-row"><div class="feat-row-idx">02</div><div class="feat-row-body"><h4 class="feat-row-t">天使坡魔毯教學區（エンゼルゲレンデ）</h4><p class="feat-row-d">全長 100m 的緩坡搭配免費魔毯，大人小孩都能無壓力起步。iSKI 常態班在這裡開始你的第一堂課。</p></div></div>
+    <div class="feat-row"><div class="feat-row-idx">03</div><div class="feat-row-body"><h4 class="feat-row-t">雪上藍色列車打卡景點</h4><p class="feat-row-d">雪場內的獨特藍色火車車廂，是越後湯澤最具代表性的視覺地標。每個來過的人都帶走這張照片。</p></div></div>
+    <div class="feat-row"><div class="feat-row-idx">04</div><div class="feat-row-body"><h4 class="feat-row-t">寬廣樹林道</h4><p class="feat-row-d">場內開放式樹林區，適合初中階雪友挑戰。粉雪在樹間的浮遊感，是你在初學坡道感受不到的另一個世界。</p></div></div>
+    <div class="feat-row"><div class="feat-row-idx">05</div><div class="feat-row-body"><h4 class="feat-row-t">微笑兒童公園（スマイルキッズパーク）</h4><p class="feat-row-d">¥1,000 入場，含雪地輪胎、雪橇、雪上電梯及簡易滑雪板租借。2 歲以上皆可，不會滑雪的家長也能陪孩子一起玩。</p></div></div>
+    <div class="feat-row"><div class="feat-row-idx">06</div><div class="feat-row-body"><h4 class="feat-row-t">免費室內兒童空間</h4><p class="feat-row-d">靠近停車場的室內兒童休憩區，方便穿裝備、餵食、休息。帶小孩來滑雪最怕的後勤戰，這裡幫你想到了。</p></div></div>
+  </div>
+</div>
+
+<!-- YouTube -->
+<div style="max-width:1200px;margin:0 auto;padding:12px 60px 32px;">
+  <div class="yt-wrap reveal">
+    <iframe src="https://www.youtube.com/embed/NQiKZLkugrM" title="Yuzawa Nakazato" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- 雪票費用 -->
+<div class="section section-alt">
+  <div class="inner">
+    <div class="reveal">
+      <p class="eyebrow">Lift Ticket · 纜車票費用</p>
+      <h2 class="section-heading">纜車票<br>費用參考</h2>
+      <p class="section-heading-jp" style="margin-bottom:12px;">リ　フ　ト　券　は　別　途　ご　購　入</p>
+      <p style="font-size:14px;color:rgba(200,218,234,.55);letter-spacing:1px;margin-bottom:44px;">※ iSKI 課程費用不含纜車票，請另行購買。</p>
+    </div>
+    <table class="ticket-table reveal rd1">
+      <thead>
+        <tr>
+          <th>票種</th>
+          <th>大人</th>
+          <th>中高生</th>
+          <th>小學生</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>全日券</td>
+          <td class="ticket-num">¥6,400</td>
+          <td class="ticket-num">¥5,200</td>
+          <td class="ticket-num">¥3,200</td>
+        </tr>
+        <tr>
+          <td>5 小時券</td>
+          <td class="ticket-num">¥5,200</td>
+          <td class="ticket-num">¥4,200</td>
+          <td class="ticket-num">¥2,500</td>
+        </tr>
+        <tr>
+          <td>未就學兒童</td>
+          <td colspan="3" style="text-align:center;color:rgba(200,218,234,.55);font-size:13px;letter-spacing:1px;">免費（須與持票家長同乘）</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="ticket-extra reveal rd2" style="margin-top:3px;">
+      <div class="te-item">
+        <div class="te-label">天使坡魔毯區 專用券</div>
+        <div class="te-name">エンゼルゲレンデ</div>
+        <div class="te-val">¥2,300</div>
+        <div class="te-desc">10:00–16:00 ・ 持一般纜車票也可進入，不須另購</div>
+      </div>
+      <div class="te-item">
+        <div class="te-label">兒童公園入場費（另計）</div>
+        <div class="te-name">スマイルキッズパーク</div>
+        <div class="te-val">¥1,000</div>
+        <div class="te-desc">2 歲以上・含雪橇、雪地輪胎、簡易滑雪板租借・持纜車票仍須另購</div>
+      </div>
+    </div>
+    <p class="ticket-note reveal rd3">
+      ※ 以上為 25/26 雪季費用，26/27 雪季費用待官方公布。<br>
+      ※ 線上預購通常較現場便宜，建議事先購買。
+    </p>
+    <a href="https://www.yuzawa-nakazato.com/winter/fee/" target="_blank" class="ticket-link reveal rd3">查看官方最新票價</a>
+  </div>
+</div>
+
+<!-- BEYOND -->
+<div class="beyond-section">
+  <div class="beyond-inner">
+    <div class="reveal">
+      <p class="eyebrow">Beyond The Slope</p>
+      <h2 class="section-heading">滑完之後</h2>
+      <p class="section-heading-jp" style="margin-bottom:0;">雪　の　あ　と　の　楽　し　み</p>
+    </div>
+    <div class="nearby-grid reveal rd1">
+      <div class="nearby-card">
+        <div class="nearby-img"><img src="https://www.e-yuzawa.gr.jp/language_common/img/hotspring/img5.jpg" alt="山之湯"></div>
+        <div class="nearby-body">
+          <div class="nearby-type">ONSEN · 溫泉</div>
+          <div class="nearby-name">山之湯</div>
+          <p class="nearby-desc">岩石露天浴池，俯瞰銀白雪地。滑完一天的雪，泡進熱湯，讓肌肉徹底放鬆。</p>
+        </div>
+      </div>
+      <div class="nearby-card">
+        <div class="nearby-img"><img src="https://tblg.k-img.com/restaurant/images/Rvw/152349/640x640_rect_152349955.jpg" alt="ぽんしゅ館"></div>
+        <div class="nearby-body">
+          <div class="nearby-type">SAKE · 清酒</div>
+          <div class="nearby-name">ぽんしゅ館</div>
+          <p class="nearby-desc">越後湯澤站內的清酒聖地，試飲新潟各地酒藏佳釀與清酒冰淇淋。不喝酒的人也值得進去看看。</p>
+        </div>
+      </div>
+      <div class="nearby-card">
+        <div class="nearby-img"><img src="https://enjoyniigata.com/image/rendering/attraction_image/3881/keep/1200?v=79ab2bcc1c0e08350ced9e7a6c799cf4504c2d86" alt="牧之通"></div>
+        <div class="nearby-body">
+          <div class="nearby-type">TOWNSCAPE · 老街</div>
+          <div class="nearby-name">牧之通</div>
+          <p class="nearby-desc">保留江戶風情的歷史老街，冬季雪中木造屋舍彷彿穿越時代。是雪國氣氛最濃的一條路。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap reveal">
+  <div>
+    <p class="cta-kicker">iSKI 滑雪學校 — 湯澤中里</p>
+    <h2 class="cta-title">READY TO<br><span class="accent">RIDE?</span></h2>
+  </div>
+  <div class="cta-buttons">
+    <a href="/index.php?route=common/snowing_yuzawa&category=group" class="cta-btn-ice">立即報名常態班</a>
+    <a href="/index.php?route=common/snowing_yuzawa&category=private" class="cta-btn-outline">私人課程 →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" style="text-decoration:none;">
+    <img src="https://stage.iski.com.tw/image/catalog/snowing/01.home/link/M/M_Website_home logo01.png" alt="iSKI" style="height:22px;width:auto;display:block;opacity:0.55;">
+  </a>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/iSKIclub2019/" class="footer-social-link" target="_blank" title="iSKI粉絲頁">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      iSKI粉絲頁
+    </a>
+    <span class="footer-divider"></span>
+    <a href="https://www.facebook.com/groups/universnow" class="footer-social-link" target="_blank" title="滑雪宇宙">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      滑雪宇宙
+    </a>
+    <span class="footer-divider"></span>
+    <a href="https://www.instagram.com/iskiclub/" class="footer-social-link" target="_blank" title="iSKI IG">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      iSKI IG
+    </a>
+    <span class="footer-divider"></span>
+  </div>
+</footer>
+<div style="background:#1a1c1e;border-top:1px solid rgba(245,243,239,.06);padding:16px 48px;text-align:center;font-family:'Noto Sans TC',sans-serif;font-size:11px;letter-spacing:1px;color:rgba(245,243,239,.35);line-height:2;">
+  © 2026 iSKI滑雪俱樂部 All rights reserved<br>
+  <a href="/privacy-policy" target="_blank" style="color:rgba(245,243,239,.45);text-decoration:none;" onmouseover="this.style.color='rgba(245,243,239,.85)'" onmouseout="this.style.color='rgba(245,243,239,.45)'">隱私權政策</a>
+  ｜
+  <a href="/terms-of-service" target="_blank" style="color:rgba(245,243,239,.45);text-decoration:none;" onmouseover="this.style.color='rgba(245,243,239,.85)'" onmouseout="this.style.color='rgba(245,243,239,.45)'">網站服務條款</a>
+</div>
+
+
+
+<!-- STICKY PLANNER BAR -->
+<div class="sticky-planner" id="stickyPlanner">
+  <div class="sp-left">
+    <span class="sp-label">找到適合你的課程安排</span>
+    <button class="sp-btn" onclick="openPlanner()">開始規劃 →</button>
+  </div>
+  <a href="http://m.me/iSKIclub2019" target="_blank" class="sp-messenger" title="聯絡客服">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 2.883 1.308 5.465 3.374 7.234V22l3.079-1.688c.822.226 1.693.347 2.547.347 5.523 0 10-4.145 10-9.259C22 6.145 17.523 2 12 2zm1.007 12.464l-2.548-2.715-4.97 2.715 5.467-5.799 2.61 2.715 4.908-2.715-5.467 5.799z"/></svg>
+  </a>
+</div>
+
+<!-- PLANNER OVERLAY -->
+<div class="planner-overlay" id="plannerOverlay" onclick="closePlanner()"></div>
+
+<!-- PLANNER BOTTOM SHEET -->
+<div class="planner-sheet" id="plannerSheet">
+  <div class="ps-handle"></div>
+  <div class="ps-header">
+    <span class="ps-title">課程規劃</span>
+    <button class="ps-close" onclick="closePlanner()">✕</button>
+  </div>
+  <div class="ps-divider"></div>
+  <div class="ps-body" id="plannerBody"></div>
+</div>
+
+<script>
+
+// Countdown
+(function(){
+  var deadline=new Date('2026-07-12T23:59:59+08:00').getTime();
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    var diff=deadline-Date.now();
+    var cb=document.getElementById('countdownBar');
+    if(diff<=0){if(cb)cb.style.display='none';return;}
+    document.getElementById('cbDays').textContent=pad(Math.floor(diff/86400000));
+    document.getElementById('cbHours').textContent=pad(Math.floor((diff%86400000)/3600000));
+    document.getElementById('cbMins').textContent=pad(Math.floor((diff%3600000)/60000));
+    document.getElementById('cbSecs').textContent=pad(Math.floor((diff%60000)/1000));
+  }
+  tick();setInterval(tick,1000);
+})();
+
+// ══ COURSE PLANNER ══
+var plannerState={path:null,days:null,age:null};
+var GROUP_URL='https://www.iski.com.tw/index.php?route=common/snowing_buy';
+var PRIVATE_URL='https://www.iski.com.tw/index.php?route=common/snowing_yuzawa&category=private';
+
+function openPlanner(){
+  document.getElementById('plannerOverlay').classList.add('open');
+  document.getElementById('plannerSheet').classList.add('open');
+  plannerState={path:null,days:null,age:null};
+  renderStep1();
+}
+function closePlanner(){
+  document.getElementById('plannerOverlay').classList.remove('open');
+  document.getElementById('plannerSheet').classList.remove('open');
+}
+
+function renderStep1(){
+  document.getElementById('plannerBody').innerHTML=
+    '<p class="ps-step-label">步驟 1 / 2</p>'+
+    '<p class="ps-question">你是哪種旅人？</p>'+
+    '<div class="ps-options">'+
+      '<button class="ps-option" onclick="selectPath(\'solo\')">🎿　我自己來（零基礎大人）</button>'+
+      '<button class="ps-option" onclick="selectPath(\'family\')">👨‍👧　我帶小孩來</button>'+
+      '<button class="ps-option" onclick="selectPath(\'friends\')">👥　我跟朋友一起來</button>'+
+    '</div>';
+}
+
+function selectPath(path){
+  plannerState.path=path;
+  if(path==='solo') renderStep2Solo();
+  else if(path==='family') renderStep2Family();
+  else renderResult('friends',null,null);
+}
+
+function renderStep2Solo(){
+  document.getElementById('plannerBody').innerHTML=
+    '<p class="ps-step-label">步驟 2 / 2</p>'+
+    '<p class="ps-question">你打算在雪場待幾天？</p>'+
+    '<div class="ps-options">'+
+      '<button class="ps-option" onclick="renderResult(\'solo\',\'2\',null)">2 天</button>'+
+      '<button class="ps-option" onclick="renderResult(\'solo\',\'3\',null)">3 天</button>'+
+      '<button class="ps-option" onclick="renderResult(\'solo\',\'4plus\',null)">4 天以上</button>'+
+    '</div>';
+}
+
+function renderStep2Family(){
+  document.getElementById('plannerBody').innerHTML=
+    '<p class="ps-step-label">步驟 2 / 2</p>'+
+    '<p class="ps-question">孩子幾歲？</p>'+
+    '<div class="ps-options">'+
+      '<button class="ps-option" onclick="renderResult(\'family\',null,\'young\')">3 – 7 歲</button>'+
+      '<button class="ps-option" onclick="renderResult(\'family\',null,\'older\')">8 歲以上</button>'+
+    '</div>';
+}
+
+var RESULTS={
+  'solo-2':{
+    tag:'常態團體課',
+    title:'先報 2–4 小時，感受一下再決定',
+    body:'第一次踏上雪板，不需要給自己太大的壓力。2–4 小時的體驗課，讓你在教練帶領下站穩第一步，再決定是否繼續加課。中里的魔毯初學區，是最適合第一天的地方。',
+    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+  },
+  'solo-3':{
+    tag:'常態團體課',
+    title:'8 小時課程，三天剛剛好',
+    body:'三天的行程，建議安排 8 小時課程。前兩天在教練陪伴下打好基礎，第三天帶著學到的技巧自由練習——這是進步最有感的節奏。',
+    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+  },
+  'solo-4plus':{
+    tag:'常態團體課',
+    title:'8–12 小時，時間夠用進步最大',
+    body:'四天以上的行程是最理想的學習節奏。8–12 小時課程可以從最基礎的站姿到初級坡道完整走一遍，每一天都有明顯的突破感。',
+    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+  },
+  'family-young':{
+    tag:'私人課程',
+    title:'3–7 歲的孩子，需要報名私人課',
+    body:'3–7 歲的孩子需要採分段式教學，團體課程不適用。iSKI 私人課教練會針對孩子的注意力與體力狀況彈性調整節奏，讓小朋友在安心的環境下愛上滑雪。',
+    cta:'了解私人課程',ctaUrl:PRIVATE_URL,
+    sec:'孩子滿 8 歲後可轉報常態班'
+  },
+  'family-older':{
+    tag:'常態團體課',
+    title:'8 歲以上可以跟大人一起報常態班',
+    body:'孩子滿 8 歲就符合常態班的報名資格，可以跟大人各自報名、分開上課，下課後一起在雪場自由滑行。1 人即可成班，不需要湊人數。',
+    cta:'報名常態班',ctaUrl:GROUP_URL,
+    sec:'想全家同一個教練？了解私人課程'
+  },
+  'friends':{
+    tag:'常態團體課',
+    title:'各自報名，程度相近的可分同班',
+    body:'朋友一起來最輕鬆的方式是各自報名常態班。iSKI 會依程度分班，程度相近的朋友有機會在同一班；程度不同的朋友分開上課，下課後在雪場集合繼續玩。1 人即可成班。',
+    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+  }
+};
+
+function renderResult(path,days,age){
+  var key;
+  if(path==='solo') key='solo-'+days;
+  else if(path==='family') key='family-'+age;
+  else key='friends';
+  var r=RESULTS[key];
+  if(!r)return;
+  var secHTML=r.sec?'<a href="'+(key==='family-older'?PRIVATE_URL:GROUP_URL)+'" class="ps-result-cta-sec">'+r.sec+'</a>':'';
+  document.getElementById('plannerBody').innerHTML=
+    '<div class="ps-result">'+
+      '<span class="ps-result-tag">'+r.tag+'</span>'+
+      '<h3 class="ps-result-title">'+r.title+'</h3>'+
+      '<p class="ps-result-body">'+r.body+'</p>'+
+      '<a href="'+r.ctaUrl+'" class="ps-result-cta">'+r.cta+'</a>'+
+      secHTML+
+      '<button class="ps-restart" onclick="openPlanner()">← 重新規劃</button>'+
+    '</div>';
+}
+
+// Mobile menu
+function toggleMobileMenu(){
+  var m=document.getElementById('mobileMenu'),b=document.getElementById('hamburgerBtn');
+  m.classList.toggle('open');b.classList.toggle('open');
+}
+
+// Cursor
+var cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+document.addEventListener('mousemove',function(e){
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  setTimeout(function(){ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
+});
+
+// Nav scroll
+var nav=document.getElementById('globalNav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);});
+
+// Reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+
+// Gallery auto-scroll + drag + touch
+(function(){
+  document.querySelectorAll('.resort-gallery').forEach(function(wrap){
+    var track=wrap.querySelector('.gallery-track');
+    if(!track)return;
+    var offset=0,speed=0.4,paused=false,raf;
+    function animate(){
+      if(!paused){offset+=speed;var hw=track.scrollWidth/2;if(offset>=hw)offset-=hw;track.style.transform='translateX(-'+offset+'px)';}
+      raf=requestAnimationFrame(animate);
+    }
+    animate();
+    var isDown=false,startX,startOffset;
+    wrap.addEventListener('mousedown',function(e){isDown=true;paused=true;wrap.classList.add('grabbing');startX=e.pageX;startOffset=offset;e.preventDefault();});
+    document.addEventListener('mouseup',function(){if(!isDown)return;isDown=false;wrap.classList.remove('grabbing');paused=false;});
+    document.addEventListener('mousemove',function(e){if(!isDown)return;var dx=e.pageX-startX;offset=startOffset-dx;var hw=track.scrollWidth/2;if(offset<0)offset+=hw;if(offset>=hw)offset-=hw;track.style.transform='translateX(-'+offset+'px)';});
+    var tx,to;
+    wrap.addEventListener('touchstart',function(e){paused=true;tx=e.touches[0].pageX;to=offset;},{passive:true});
+    wrap.addEventListener('touchmove',function(e){var dx=e.touches[0].pageX-tx;offset=to-dx;var hw=track.scrollWidth/2;if(offset<0)offset+=hw;if(offset>=hw)offset-=hw;track.style.transform='translateX(-'+offset+'px)';},{passive:true});
+    wrap.addEventListener('touchend',function(){paused=false;});
+  });
+})();
+
+// Open-Meteo 即時雪況 + 週預測
+var weatherCodes={0:'晴天',1:'大致晴',2:'局部多雲',3:'陰天',45:'霧',48:'霜霧',51:'微雨',53:'小雨',55:'毛毛雨',71:'小雪',73:'降雪',75:'大雪',77:'雪粒',85:'陣雪',86:'大陣雪',95:'雷雨',96:'雷雪',99:'雷大雪'};
+var weekDays=['日','一','二','三','四','五','六'];
+fetch('https://api.open-meteo.com/v1/forecast?latitude=36.895&longitude=138.886&elevation=380&current=temperature_2m,snowfall,snow_depth,weather_code,wind_speed_10m&daily=snowfall_sum,temperature_2m_max,temperature_2m_min,weather_code&timezone=Asia%2FTokyo&forecast_days=7')
+  .then(function(r){return r.json();})
+  .then(function(d){
+    var c=d.current,dy=d.daily;
+    // 即時
+    document.getElementById('wc-temp').className='';
+    document.getElementById('wc-temp').innerHTML='<span class="wc-val">'+c.temperature_2m.toFixed(1)+'<span class="wc-unit">°C</span></span><div class="wc-sub">今日 '+dy.temperature_2m_min[0].toFixed(0)+'° ～ '+dy.temperature_2m_max[0].toFixed(0)+'°</div>';
+    document.getElementById('wc-snow').className='';
+    document.getElementById('wc-snow').innerHTML='<span class="wc-val">'+(dy.snowfall_sum[0]!=null?dy.snowfall_sum[0].toFixed(1):'--')+'<span class="wc-unit">cm</span></span><div class="wc-sub">當日累積</div>';
+    document.getElementById('wc-depth').className='';
+    document.getElementById('wc-depth').innerHTML='<span class="wc-val">'+Math.round(c.snow_depth*100)+'<span class="wc-unit">cm</span></span><div class="wc-sub">模型推算值</div>';
+    document.getElementById('wc-wx').className='';
+    document.getElementById('wc-wx').innerHTML='<span class="wc-val" style="font-size:16px;letter-spacing:0;">'+(weatherCodes[c.weather_code]||'--')+'</span><div class="wc-sub">風速 '+c.wind_speed_10m.toFixed(0)+' km/h</div>';
+    var now=new Date();
+    document.getElementById('wc-note').textContent='更新：'+now.toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'})+'　資料來源：Open-Meteo 氣象模型。積雪深度為模型推算值，非雪場實測。';
+    // 週預測
+    var fr=document.getElementById('forecastRow');
+    fr.innerHTML='';
+    for(var i=0;i<7;i++){
+      var date=new Date(dy.time[i]);
+      var dayLabel=i===0?'今天':i===1?'明天':'週'+weekDays[date.getDay()];
+      var mmdd=(date.getMonth()+1)+'/'+(date.getDate());
+      var wx=weatherCodes[dy.weather_code?dy.weather_code[i]:0]||'--';
+      var hi=dy.temperature_2m_max[i]!=null?dy.temperature_2m_max[i].toFixed(0):'--';
+      var lo=dy.temperature_2m_min[i]!=null?dy.temperature_2m_min[i].toFixed(0):'--';
+      var snow=dy.snowfall_sum[i]!=null&&dy.snowfall_sum[i]>0?dy.snowfall_sum[i].toFixed(1)+' cm':'—';
+      var snowColor=dy.snowfall_sum[i]>0?'color:var(--ice);':'color:rgba(245,243,239,.25);';
+      fr.innerHTML+='<div class="fc-day"><div class="fc-date">'+dayLabel+'<br>'+mmdd+'</div><div class="fc-wx">'+wx+'</div><div class="fc-temp">'+hi+'°<span class="lo">'+lo+'°</span></div><div class="fc-snow" style="'+snowColor+'"><span>'+snow+'</span></div></div>';
+    }
+  })
+  .catch(function(){document.getElementById('wc-note').textContent='雪況資料暫時無法載入';});
+</script>
+</body>
+</html>
