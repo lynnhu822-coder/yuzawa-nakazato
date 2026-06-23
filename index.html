@@ -535,31 +535,96 @@ body{padding-bottom:58px;}
 </div>
 
 <!-- GALLERY -->
-<div style="padding:3px 0 0;">
-  <div class="resort-gallery">
-    <div class="gallery-track">
-      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-A-1.jpeg" alt="中里全景"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/__young2.jpg?_t=1781149030" alt="滑雪學員"></div>
-      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-B-1.jpg" alt="雪道"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/funride3.jpg?_t=1781151091" alt="Fun Ride Zone"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/off-shot3.jpg?_t=1781149030" alt="滑雪現場"></div>
-      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M//M_NAKAZATO-C-1.jpeg" alt="藍色列車"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/angelgelande3.jpg?_t=1781151091" alt="天使坡"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/view1.jpg?_t=1781149030" alt="雪場景觀"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/young4.jpg?_t=1781149030" alt="學員照片"></div>
-      <!-- duplicate for seamless loop -->
-      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-A-1.jpeg" alt="中里全景"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/__young2.jpg?_t=1781149030" alt="滑雪學員"></div>
-      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M/M_NAKAZATO-B-1.jpg" alt="雪道"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/funride3.jpg?_t=1781151091" alt="Fun Ride Zone"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/off-shot3.jpg?_t=1781149030" alt="滑雪現場"></div>
-      <div class="resort-gallery-item"><img src="https://stage.iski.com.tw/image/catalog/snowing/04.yuzawa/link/M//M_NAKAZATO-C-1.jpeg" alt="藍色列車"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/angelgelande3.jpg?_t=1781151091" alt="天使坡"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/view1.jpg?_t=1781149030" alt="雪場景觀"></div>
-      <div class="resort-gallery-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/young4.jpg?_t=1781149030" alt="學員照片"></div>
+<style>
+.schedule-section{background:var(--ink-mid);padding:56px 0;}
+.schedule-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.schedule-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-top:40px;}
+.sched-block{background:var(--ink-deep);padding:28px 32px;border-top:2px solid rgba(200,218,234,.15);position:relative;}
+.sched-block.active-slot{border-top-color:var(--ice);}
+.sched-tag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(200,218,234,.45);margin-bottom:12px;}
+.sched-time{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.5vw,44px);letter-spacing:2px;color:var(--snow);line-height:1;margin-bottom:8px;}
+.sched-dur{font-size:12px;color:rgba(200,218,234,.5);letter-spacing:1px;margin-bottom:16px;}
+.sched-break{font-size:13px;color:rgba(245,243,239,.4);letter-spacing:.5px;border-top:1px solid rgba(245,243,239,.06);padding-top:14px;margin-top:4px;}
+.sched-break strong{color:rgba(245,243,239,.6);}
+@media(max-width:768px){
+  .schedule-inner{padding:0 24px;}
+  .schedule-grid{grid-template-columns:1fr;}
+}
+</style>
+<div class="schedule-section">
+  <div class="schedule-inner">
+    <div class="reveal">
+      <p class="eyebrow">Class Schedule · 上課時段</p>
+      <h2 class="section-heading">選一個<br>時段上課</h2>
+      <p class="section-heading-jp" style="margin-bottom:0;">時　段　選　択</p>
+    </div>
+    <div class="schedule-grid reveal rd1">
+      <div class="sched-block">
+        <div class="sched-tag">A 時段</div>
+        <div class="sched-time">9:00 – 11:00</div>
+        <div class="sched-dur">2 小時課程</div>
+        <div class="sched-break">休息 <strong>30 分鐘</strong> 後可接 B 時段</div>
+      </div>
+      <div class="sched-block">
+        <div class="sched-tag">B 時段</div>
+        <div class="sched-time">11:30 – 13:30</div>
+        <div class="sched-dur">2 小時課程</div>
+        <div class="sched-break">休息 <strong>1 小時</strong> 後可接 C 時段</div>
+      </div>
+      <div class="sched-block">
+        <div class="sched-tag">C 時段</div>
+        <div class="sched-time">14:30 – 16:30</div>
+        <div class="sched-dur">2 小時課程</div>
+        <div class="sched-break" style="color:rgba(245,243,239,.25);">當日最後時段</div>
+      </div>
     </div>
   </div>
-  <p class="resort-gallery-hint">SWIPE TO EXPLORE</p>
+</div>
+
+<!-- MASONRY -->
+<style>
+.masonry-section{padding:3px 0;}
+.masonry-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:220px;
+  gap:3px;
+  grid-auto-flow:dense;
+}
+.masonry-item{overflow:hidden;}
+.masonry-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.masonry-item:hover img{transform:scale(1.05);}
+.mi-large{grid-column:span 2;grid-row:span 2;}
+.mi-wide{grid-column:span 2;}
+.mi-tall{grid-row:span 2;}
+.masonry-hint{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:12px 60px 0;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(245,243,239,.3);}
+.masonry-hint::before{content:'';flex:1;height:1px;background:rgba(245,243,239,.07);}
+@media(max-width:768px){
+  .masonry-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;}
+  .mi-large{grid-column:span 2;grid-row:span 1;}
+  .mi-tall{grid-row:span 1;}
+  .masonry-hint{padding:8px 24px 0;}
+}
+</style>
+<div class="masonry-section">
+  <div class="masonry-grid">
+    <div class="masonry-item mi-large"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/school3.webp" alt="教學實況"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/mamamiki1.webp" alt="親子滑雪"></div>
+    <div class="masonry-item mi-tall"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/young8.webp" alt="親子玩雪"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/view1.webp" alt="雪場景觀"></div>
+    <div class="masonry-item mi-wide"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/pow2.webp" alt="粉雪"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/lift2.webp" alt="纜車"></div>
+    <div class="masonry-item mi-large"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/school7.webp" alt="滑板教學"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/mamamiki2.webp" alt="親子"></div>
+    <div class="masonry-item mi-tall"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/school2.webp" alt="教學實況"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/_2TW1910.webp" alt="現場紀實"></div>
+    <div class="masonry-item mi-wide"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/view4.webp" alt="雪場景觀"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/school9.webp" alt="教學"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/yukiasobi.webp" alt="雪地玩樂"></div>
+    <div class="masonry-item"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/school5.webp" alt="教學實況"></div>
+    <div class="masonry-item mi-wide"><img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/school4.webp" alt="教學實況"></div>
+  </div>
+  <p class="masonry-hint">YUZAWA NAKAZATO</p>
 </div>
 
 <!-- 雪場特色 -->
@@ -785,9 +850,9 @@ function renderStep1(){
     '<p class="ps-step-label">步驟 1 / 2</p>'+
     '<p class="ps-question">你是哪種旅人？</p>'+
     '<div class="ps-options">'+
-      '<button class="ps-option" onclick="selectPath(\'solo\')">🎿　我自己來（新手到剛接觸紅線）</button>'+
-      '<button class="ps-option" onclick="selectPath(\'family\')">👨‍👧　我帶小孩來</button>'+
-      '<button class="ps-option" onclick="selectPath(\'friends\')">👥　我跟朋友一起來</button>'+
+      '<button class="ps-option" onclick="selectPath(\'solo\')">🎿　我自己來，想認真進步</button>'+
+      '<button class="ps-option" onclick="selectPath(\'family\')">👨‍👧　我帶小孩，讓孩子學滑雪</button>'+
+      '<button class="ps-option" onclick="selectPath(\'friends\')">👥　我跟朋友一起，程度有點不同</button>'+
     '</div>';
 }
 
