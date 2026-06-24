@@ -405,29 +405,30 @@ body{padding-bottom:58px;}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/login" class="mobile-menu-link">會員中心</a>
+  <a href="https://www.iski.com.tw/index.php?route=account/login" class="mobile-menu-link">會員中心</a>
   <div class="mobile-menu-section">
-    <p class="mobile-menu-label">越後湯澤 課程</p>
-    <a href="https://www.iski.com.tw/index.php?route=common/snowing_buy" class="mobile-menu-link">常態團體課 報名</a>
+    <p class="mobile-menu-label">雪上課程</p>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_yuzawa&category=group" class="mobile-menu-link">越後湯澤 團體課</a>
     <a href="https://www.iski.com.tw/index.php?route=common/snowing_yuzawa&category=private" class="mobile-menu-link">越後湯澤 私人課</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_hokkaido&category=teine_private" class="mobile-menu-link">手稻 私人課</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_hokkaido&category=rusutsu_private" class="mobile-menu-link">留壽都 私人課</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_zao&category=private" class="mobile-menu-link">藏王 私人課</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_course&course=4" class="mobile-menu-link">CAMP 營</a>
   </div>
   <div class="mobile-menu-section">
-    <p class="mobile-menu-label">越後湯澤 雪場</p>
-    <a href="#" class="mobile-menu-link">湯澤中里（本頁）</a>
+    <p class="mobile-menu-label">雪場介紹</p>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_yuzawa&category=info" class="mobile-menu-link">越後湯澤（地區總覽）</a>
     <a href="#" class="mobile-menu-link">石打丸山</a>
-  </div>
-  <div class="mobile-menu-section">
-    <p class="mobile-menu-label">其他目的地</p>
-    <a href="/index.php?route=common/snowing_hokkaido&category=teine" class="mobile-menu-link">北海道手稻</a>
-    <a href="/index.php?route=common/snowing_zao" class="mobile-menu-link">東北藏王</a>
-    <a href="/index.php?route=common/snowing_hokkaido&category=rusutsu" class="mobile-menu-link">留壽都</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_hokkaido&category=teine" class="mobile-menu-link">北海道手稻</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_hokkaido&category=rusutsu" class="mobile-menu-link">北海道留壽都</a>
+    <a href="https://www.iski.com.tw/index.php?route=common/snowing_zao" class="mobile-menu-link">東北藏王</a>
   </div>
   <div class="mobile-menu-section">
     <p class="mobile-menu-label">服務</p>
     <a href="https://www.iski-select.com.tw/pages/rental" target="_blank" class="mobile-menu-link">日本雪具租借 &amp; 倉儲</a>
-    <a href="/" class="mobile-menu-link">iSKI 首頁</a>
+    <a href="https://www.iski.com.tw/" class="mobile-menu-link">iSKI 首頁</a>
   </div>
-  <a href="https://www.iski.com.tw/index.php?route=common/snowing_buy" class="mobile-menu-cta" target="_blank">立即報名 常態團體課 →</a>
+  <a href="https://www.iski.com.tw/index.php?route=common/snowing_buy" class="mobile-menu-cta">立即購課 →</a>
 </div>
 
 <!-- NAV -->
@@ -552,11 +553,11 @@ body{padding-bottom:58px;}
 /* Ken Burns: 只在 revealed 後啟動 */
 @keyframes kenburns-a{
   0%{transform:scale(1.08) translate(0,0);}
-  100%{transform:scale(1.18) translate(-2%,-1%);}
+  100%{transform:scale(1.18) translate(-4%,-2%);}
 }
 @keyframes kenburns-b{
   0%{transform:scale(1.08) translate(0,0);}
-  100%{transform:scale(1.18) translate(2%,1%);}
+  100%{transform:scale(1.18) translate(4%,2%);}
 }
 .panoramic-item.pan-revealed .pano-img-a{animation:kenburns-a 12s ease-in-out forwards;}
 .panoramic-item.pan-revealed .pano-img-b{animation:kenburns-b 12s ease-in-out forwards;}
