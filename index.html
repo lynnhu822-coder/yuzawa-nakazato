@@ -609,6 +609,9 @@ body{padding-bottom:58px;}
 .resort-gallery-item:hover::after{background:rgba(0,0,0,.45);}
 .gallery-zoom{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;pointer-events:none;}
 .resort-gallery-item:hover .gallery-zoom{opacity:1;}
+@media(hover:none){
+  .gallery-zoom{opacity:.45;}
+}
 @media(max-width:768px){
   .panoramic-section{grid-template-columns:1fr;}
   .panoramic-item{height:240px;}
