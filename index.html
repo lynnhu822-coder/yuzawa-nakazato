@@ -550,44 +550,36 @@ body{padding-bottom:58px;}
 <style>
 .schedule-section{background:var(--ink-mid);padding:56px 0;}
 .schedule-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
-.schedule-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-top:40px;}
-.sched-block{background:var(--ink-deep);padding:28px 32px;border-top:2px solid rgba(200,218,234,.15);position:relative;}
-.sched-block.active-slot{border-top-color:var(--ice);}
-.sched-tag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(200,218,234,.45);margin-bottom:12px;}
-.sched-time{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.5vw,44px);letter-spacing:2px;color:var(--snow);line-height:1;margin-bottom:8px;}
-.sched-dur{font-size:12px;color:rgba(200,218,234,.5);letter-spacing:1px;margin-bottom:16px;}
-.sched-break{font-size:13px;color:rgba(245,243,239,.4);letter-spacing:.5px;border-top:1px solid rgba(245,243,239,.06);padding-top:14px;margin-top:4px;}
-.sched-break strong{color:rgba(245,243,239,.6);}
+.sched-heading{font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--snow);margin-bottom:6px;}
+.sched-sub{font-size:14px;color:rgba(245,243,239,.4);letter-spacing:1px;margin-bottom:32px;}
+.schedule-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.sched-block{border:1px solid rgba(245,243,239,.12);padding:36px 20px;text-align:center;}
+.sched-letter{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);letter-spacing:4px;color:var(--snow);line-height:1;margin-bottom:20px;}
+.sched-time{font-size:clamp(13px,1.6vw,17px);color:rgba(245,243,239,.5);letter-spacing:1px;}
 @media(max-width:768px){
   .schedule-inner{padding:0 24px;}
-  .schedule-grid{grid-template-columns:1fr;}
+  .schedule-grid{gap:8px;}
+  .sched-block{padding:24px 12px;}
 }
 </style>
 <div class="schedule-section">
   <div class="schedule-inner">
     <div class="reveal">
-      <p class="eyebrow">Class Schedule · 上課時段</p>
-      <h2 class="section-heading">選一個<br>時段上課</h2>
-      <p class="section-heading-jp" style="margin-bottom:0;">時　段　選　択</p>
+      <p class="sched-heading">每日課程時段</p>
+      <p class="sched-sub">每堂 2 小時 &nbsp;·&nbsp; 彈性選擇</p>
     </div>
     <div class="schedule-grid reveal rd1">
       <div class="sched-block">
-        <div class="sched-tag">A 時段</div>
-        <div class="sched-time">9:00 – 11:00</div>
-        <div class="sched-dur">2 小時課程</div>
-        <div class="sched-break">休息 <strong>30 分鐘</strong> 後可接 B 時段</div>
+        <div class="sched-letter">A</div>
+        <div class="sched-time">09:00 — 11:00</div>
       </div>
       <div class="sched-block">
-        <div class="sched-tag">B 時段</div>
-        <div class="sched-time">11:30 – 13:30</div>
-        <div class="sched-dur">2 小時課程</div>
-        <div class="sched-break">休息 <strong>1 小時</strong> 後可接 C 時段</div>
+        <div class="sched-letter">B</div>
+        <div class="sched-time">11:30 — 13:30</div>
       </div>
       <div class="sched-block">
-        <div class="sched-tag">C 時段</div>
-        <div class="sched-time">14:30 – 16:30</div>
-        <div class="sched-dur">2 小時課程</div>
-        <div class="sched-break" style="color:rgba(245,243,239,.25);">當日最後時段</div>
+        <div class="sched-letter">C</div>
+        <div class="sched-time">14:30 — 16:30</div>
       </div>
     </div>
   </div>
