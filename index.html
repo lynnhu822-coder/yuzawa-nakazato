@@ -525,66 +525,6 @@ body{padding-bottom:58px;}
   </div>
 </div>
 
-<!-- 即時雪況 -->
-<div class="weather-strip">
-  <div class="weather-inner">
-    <div class="weather-header">
-      <div class="wc-dot"></div>
-      <div class="weather-title">LIVE CONDITIONS · 即時雪況</div>
-    </div>
-    <div class="weather-grid" id="weatherGrid">
-      <div class="wc-item"><div class="wc-label">TEMPERATURE</div><div class="wc-loading" id="wc-temp">--</div></div>
-      <div class="wc-item"><div class="wc-label">TODAY SNOWFALL</div><div class="wc-loading" id="wc-snow">--</div></div>
-      <div class="wc-item"><div class="wc-label">SNOW DEPTH</div><div class="wc-loading" id="wc-depth">--</div></div>
-      <div class="wc-item"><div class="wc-label">CONDITIONS</div><div class="wc-loading" id="wc-wx">--</div></div>
-    </div>
-    <div class="wc-note" id="wc-note">資料來源：Open-Meteo 氣象模型。積雪深度為模型推算值，非雪場實測。</div>
-    <div class="forecast-section">
-      <div class="forecast-label">7 DAY FORECAST · 一週預報</div>
-      <div class="forecast-row" id="forecastRow"><div style="color:rgba(200,218,234,.3);font-size:12px;letter-spacing:1px;padding:12px 0;">載入中…</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- GALLERY -->
-<style>
-.schedule-section{background:var(--ink-mid);padding:56px 0;}
-.schedule-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
-.sched-heading{font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--snow);margin-bottom:6px;}
-.sched-sub{font-size:14px;color:rgba(245,243,239,.4);letter-spacing:1px;margin-bottom:32px;}
-.schedule-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
-.sched-block{border:1px solid rgba(245,243,239,.12);padding:36px 20px;text-align:center;}
-.sched-letter{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);letter-spacing:4px;color:var(--snow);line-height:1;margin-bottom:20px;}
-.sched-time{font-size:clamp(13px,1.6vw,17px);color:rgba(245,243,239,.5);letter-spacing:1px;}
-@media(max-width:768px){
-  .schedule-inner{padding:0 24px;}
-  .schedule-grid{gap:8px;}
-  .sched-block{padding:24px 12px;}
-}
-</style>
-<div class="schedule-section">
-  <div class="schedule-inner">
-    <div class="reveal">
-      <p class="sched-heading">每日課程時段</p>
-      <p class="sched-sub">每堂 2 小時 &nbsp;·&nbsp; 彈性選擇</p>
-    </div>
-    <div class="schedule-grid reveal rd1">
-      <div class="sched-block">
-        <div class="sched-letter">A</div>
-        <div class="sched-time">09:00 — 11:00</div>
-      </div>
-      <div class="sched-block">
-        <div class="sched-letter">B</div>
-        <div class="sched-time">11:30 — 13:30</div>
-      </div>
-      <div class="sched-block">
-        <div class="sched-letter">C</div>
-        <div class="sched-time">14:30 — 16:30</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.93);align-items:center;justify-content:center;cursor:pointer;">
   <img id="lightbox-img" style="max-width:92vw;max-height:92vh;object-fit:contain;display:block;pointer-events:none;">
@@ -595,7 +535,32 @@ body{padding-bottom:58px;}
 <style>
 .panoramic-section{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px;}
 .panoramic-item{overflow:hidden;height:400px;position:relative;}
-.panoramic-item img{width:100%;height:100%;object-fit:cover;display:block;}
+.panoramic-item img{width:100%;height:100%;object-fit:cover;display:block;transform-origin:center center;}
+
+/* Reveal: 預設遮罩蓋住 */
+.panoramic-item::before{
+  content:'';
+  position:absolute;inset:0;
+  background:#0b0d10;
+  z-index:2;
+  transform:scaleX(1);
+  transform-origin:left center;
+  transition:transform 1.1s cubic-bezier(.77,0,.18,1);
+}
+.panoramic-item.pan-revealed::before{transform:scaleX(0);transform-origin:right center;}
+
+/* Ken Burns: 只在 revealed 後啟動 */
+@keyframes kenburns-a{
+  0%{transform:scale(1.08) translate(0,0);}
+  100%{transform:scale(1.18) translate(-2%,-1%);}
+}
+@keyframes kenburns-b{
+  0%{transform:scale(1.08) translate(0,0);}
+  100%{transform:scale(1.18) translate(2%,1%);}
+}
+.panoramic-item.pan-revealed .pano-img-a{animation:kenburns-a 12s ease-in-out forwards;}
+.panoramic-item.pan-revealed .pano-img-b{animation:kenburns-b 12s ease-in-out forwards;}
+
 .resort-gallery-item{position:relative;cursor:pointer;flex-shrink:0;}
 .resort-gallery-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s;pointer-events:none;}
 .resort-gallery-item:hover::after{background:rgba(0,0,0,.45);}
@@ -615,10 +580,10 @@ body{padding-bottom:58px;}
 
 <div class="panoramic-section">
   <div class="panoramic-item">
-    <img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/view4.webp" alt="雪場全景">
+    <img class="pano-img-a" src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/view4.webp" alt="雪場全景">
   </div>
   <div class="panoramic-item">
-    <img src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/pow2.webp" alt="粉雪全景">
+    <img class="pano-img-b" src="https://www.iski.com.tw/image/catalog/%E6%97%A5%E6%9C%AC%E9%9B%AA%E5%A0%B4/landing%20page%202026/nakazato/pow2.webp" alt="粉雪全景">
   </div>
 </div>
 
@@ -762,10 +727,42 @@ body{padding-bottom:58px;}
   </div>
 </div>
 
-<!-- YouTube -->
-<div style="max-width:1200px;margin:0 auto;padding:12px 60px 32px;">
-  <div class="yt-wrap reveal">
-    <iframe src="https://www.youtube.com/embed/NQiKZLkugrM" title="Yuzawa Nakazato" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- GALLERY -->
+<style>
+.schedule-section{background:var(--ink-mid);padding:56px 0;}
+.schedule-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.sched-heading{font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--snow);margin-bottom:6px;}
+.sched-sub{font-size:14px;color:rgba(245,243,239,.4);letter-spacing:1px;margin-bottom:32px;}
+.schedule-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.sched-block{border:1px solid rgba(245,243,239,.12);padding:36px 20px;text-align:center;}
+.sched-letter{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);letter-spacing:4px;color:var(--snow);line-height:1;margin-bottom:20px;}
+.sched-time{font-size:clamp(13px,1.6vw,17px);color:rgba(245,243,239,.5);letter-spacing:1px;}
+@media(max-width:768px){
+  .schedule-inner{padding:0 24px;}
+  .schedule-grid{gap:8px;}
+  .sched-block{padding:24px 12px;}
+}
+</style>
+<div class="schedule-section">
+  <div class="schedule-inner">
+    <div class="reveal">
+      <p class="sched-heading">每日課程時段</p>
+      <p class="sched-sub">每堂 2 小時 &nbsp;·&nbsp; 彈性選擇</p>
+    </div>
+    <div class="schedule-grid reveal rd1">
+      <div class="sched-block">
+        <div class="sched-letter">A</div>
+        <div class="sched-time">09:00 — 11:00</div>
+      </div>
+      <div class="sched-block">
+        <div class="sched-letter">B</div>
+        <div class="sched-time">11:30 — 13:30</div>
+      </div>
+      <div class="sched-block">
+        <div class="sched-letter">C</div>
+        <div class="sched-time">14:30 — 16:30</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -825,6 +822,34 @@ body{padding-bottom:58px;}
       ※ 線上預購通常較現場便宜，建議事先購買。
     </p>
     <a href="https://www.yuzawa-nakazato.com/winter/fee/" target="_blank" class="ticket-link reveal rd3">查看官方最新票價</a>
+  </div>
+</div>
+
+<!-- YouTube -->
+<div style="max-width:1200px;margin:0 auto;padding:12px 60px 32px;">
+  <div class="yt-wrap reveal">
+    <iframe src="https://www.youtube.com/embed/NQiKZLkugrM" title="Yuzawa Nakazato" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- 即時雪況 -->
+<div class="weather-strip">
+  <div class="weather-inner">
+    <div class="weather-header">
+      <div class="wc-dot"></div>
+      <div class="weather-title">LIVE CONDITIONS · 即時雪況</div>
+    </div>
+    <div class="weather-grid" id="weatherGrid">
+      <div class="wc-item"><div class="wc-label">TEMPERATURE</div><div class="wc-loading" id="wc-temp">--</div></div>
+      <div class="wc-item"><div class="wc-label">TODAY SNOWFALL</div><div class="wc-loading" id="wc-snow">--</div></div>
+      <div class="wc-item"><div class="wc-label">SNOW DEPTH</div><div class="wc-loading" id="wc-depth">--</div></div>
+      <div class="wc-item"><div class="wc-label">CONDITIONS</div><div class="wc-loading" id="wc-wx">--</div></div>
+    </div>
+    <div class="wc-note" id="wc-note">資料來源：Open-Meteo 氣象模型。積雪深度為模型推算值，非雪場實測。</div>
+    <div class="forecast-section">
+      <div class="forecast-label">7 DAY FORECAST · 一週預報</div>
+      <div class="forecast-row" id="forecastRow"><div style="color:rgba(200,218,234,.3);font-size:12px;letter-spacing:1px;padding:12px 0;">載入中…</div></div>
+    </div>
   </div>
 </div>
 
@@ -1027,19 +1052,19 @@ var RESULTS={
     tag:'常態團體課',
     title:'先報 2–4 小時，感受一下再決定',
     body:'第一次踏上雪板，不需要給自己太大的壓力。2–4 小時的體驗課，讓你在教練帶領下站穩第一步，再決定是否繼續加課。中里的魔毯初學區，是最適合第一天的地方。',
-    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+    cta:'立即購課',ctaUrl:GROUP_URL,sec:null
   },
   'solo-3':{
     tag:'常態團體課',
-    title:'8 小時課程，三天剛剛好',
-    body:'三天的行程，建議安排 8 小時課程。前兩天在教練陪伴下打好基礎，第三天帶著學到的技巧自由練習——這是進步最有感的節奏。',
-    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+    title:'三天的話，可以這樣安排',
+    body:'三天的行程，可以考慮安排 8 小時課程。前兩天在教練陪伴下打好基礎，第三天帶著學到的技巧自由練習——這是進步比較有感的節奏，但實際堂數可以跟客服討論。',
+    cta:'立即購課',ctaUrl:GROUP_URL,sec:null
   },
   'solo-4plus':{
     tag:'常態團體課',
-    title:'8–12 小時，時間夠用進步最大',
-    body:'四天以上的行程是最理想的學習節奏。8–12 小時課程可以從最基礎的站姿到初級坡道完整走一遍，每一天都有明顯的突破感。',
-    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+    title:'四天以上，時間比較充裕',
+    body:'四天以上的行程學習節奏比較從容。8–12 小時是一個參考範圍，可以從最基礎的站姿到初級坡道完整走一遍——實際堂數建議跟客服確認，依你的程度和目標調整。',
+    cta:'立即購課',ctaUrl:GROUP_URL,sec:null
   },
   'family-young':{
     tag:'私人課程',
@@ -1052,14 +1077,14 @@ var RESULTS={
     tag:'常態團體課',
     title:'8 歲以上可以跟大人一起報常態班',
     body:'孩子滿 8 歲就符合常態班的報名資格，可以跟大人各自報名、分開上課，下課後一起在雪場自由滑行。1 人即可成班，不需要湊人數。',
-    cta:'報名常態班',ctaUrl:GROUP_URL,
+    cta:'立即購課',ctaUrl:GROUP_URL,
     sec:'想全家同一個教練？了解私人課程'
   },
   'friends':{
     tag:'常態團體課',
     title:'各自報名，程度相近的可分同班',
     body:'朋友一起來最輕鬆的方式是各自報名常態班。iSKI 會依程度分班，程度相近的朋友有機會在同一班；程度不同的朋友分開上課，下課後在雪場集合繼續玩。1 人即可成班。',
-    cta:'報名常態班',ctaUrl:GROUP_URL,sec:null
+    cta:'立即購課',ctaUrl:GROUP_URL,sec:null
   }
 };
 
@@ -1077,6 +1102,7 @@ function renderResult(path,days,age){
       '<h3 class="ps-result-title">'+r.title+'</h3>'+
       '<p class="ps-result-body">'+r.body+'</p>'+
       '<a href="'+r.ctaUrl+'" class="ps-result-cta">'+r.cta+'</a>'+
+      '<a href="http://m.me/iSKIclub2019" target="_blank" class="ps-result-cta-sec">諮詢客服</a>'+
       secHTML+
       '<button class="ps-restart" onclick="openPlanner()">← 重新規劃</button>'+
     '</div>';
@@ -1104,6 +1130,23 @@ var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+
+// Panoramic reveal + Ken Burns
+(function(){
+  var items=document.querySelectorAll('.panoramic-item');
+  if(!items.length)return;
+  var panObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el=e.target;
+        panObs.unobserve(el);
+        var delay=el===items[1]?200:0;
+        setTimeout(function(){el.classList.add('pan-revealed');},delay);
+      }
+    });
+  },{threshold:0.2});
+  items.forEach(function(el){panObs.observe(el);});
+})();
 
 // Gallery auto-scroll + drag + touch
 (function(){
